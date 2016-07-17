@@ -1,0 +1,9 @@
+Bundle 'chriskempson/base16-vim'
+Bundle 'Yggdroot/hiPairs'
+Bundle 'svermeulen/vim-easyclip'
+Bundle 'bash-support.vim'
+
+UnBundle 'xolox/vim-colorscheme-switcher'
+UnBundle 'terryma/vim-expand-region'
+UnBundle 'scrooloose/syntastic'
+UnBundle 'nathanaelkane/vim-indent-guides'

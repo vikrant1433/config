@@ -1,0 +1,151 @@
+"UI changes {
+" for making base16 show colors properly
+let base16colorspace=256
+" for making screen show colors properly
+if &term == "screen"
+  set t_Co=256
+endif
+syntax enable
+"colorschemes
+"colorscheme molokai
+" tx
+if has('gui_running')
+    colorscheme codeschool
+    set guifont=Consolas\ 15
+else
+    colorscheme base16-default-dark
+    "colorscheme wombat256
+endif
+" txend
+"colorscheme wombat256mod
+" bold the current line
+set cursorline
+hi CursorLine term=bold cterm=bold guibg=Grey40
+" disable highlighting of tabs
+let g:indent_guides_enable_ov_vim_startup=0 
+set number
+set relativenumber
+set wrap
+set linebreak
+" Use the same symbols as TextMate for tabstops and EOLs
+" show tabs and newline characters
+"set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,trail:•,extends:#,nbsp:.,eol:¬,space:. " Highlight problematic whitespace
+set nospell
+set nolist
+hi clear SpellBad
+" doesn't highlighting braceses matching
+let g:loaded_matchparen=1
+let g:airline_theme='base16'
+
+"}
+
+" mappings
+" to go to normal mode and keep the cursor at its original position
+inoremap jk <esc>l
+" vnoremap jk <esc>
+"make zsh as default shell for vim
+set shell=/usr/bin/zsh
+" Shortcut to rapidly toggle `set list`
+nnoremap <leader>l :set list!<CR>
+"set listchars=tab:-\ ,eol:¬
+" open ~/.vimrc.local for in vertical split for editing
+nnoremap <silent> <leader>ev :vsplit ~/.vimrc.local<CR>
+nnoremap <silent> <leader>sv :source $MYVIMRC<CR>
+" paste below the line
+"nnoremap <leader>p o<ESC>p
+" inserting date with F5
+nnoremap <F5> "=strftime("%d-%b-%Y")<CR>P
+inoremap <F5> <C-R>=strftime("%d-%b-%Y")<CR>
+" indentation with tab and shift + tab key in normal and Visual mode
+" for command mode
+"nnoremap <S-Tab> <<
+"nnoremap <Tab> >>
+" for insert mode
+"inoremap <S-Tab> <C-d>
+"set nohlsearch
+
+" <Ctrl-l> redraws the screen and removes any search highlighting.
+nnoremap <silent> <C-l> :nohl<CR><C-l>
+
+" move the current line down
+nnoremap <S-down> :m +1<CR>
+" move the current line up
+nnoremap <S-up> :m -2<CR>
+nnoremap <right> <Nop>
+nnoremap <left> <Nop>
+
+vnoremap <S-down> :m +1<CR>
+" move the current line up
+vnoremap <S-up> :m -2<CR>
+
+"ino <down> <Nop>
+"ino <left> <Nop>
+"ino <right> <Nop>
+"ino <up> <Nop>
+
+" ============= Custom Mappings ==============
+" general mapping
+"nnoremap <Tab> :tabnext<CR>
+"nnoremap <S-Tab> :tabprevious<CR>
+"map <Tab> :tabnext<CR>
+"map <S-Tab> :tabprevious<CR>
+"inoremap <Tab> <ESC>:tabnext<CR>
+"inoremap <S-Tab> <ESC>:tabprevious<CR>
+" for auto centering 
+nnoremap G Gzz
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap } }zz
+nnoremap { {zz
+
+" gO put newline above the current line
+nnoremap gO O<ESC>j
+
+" g<C-O> put newline below the current line
+nnoremap g<C-O> o<ESC>k
+" easier moving of code blocks
+vnoremap > >gv      " better indentation
+" delete the line in insert mode
+inoremap <C-d> <ESC>ddi
+" undo in insert mode
+inoremap <C-z> <ESC>ui
+" upper case the word in insert mode
+"inoremap <C-u> <ESC>viwU<ESC>i
+" upper case the word in normal mode
+"nnoremap <C-u> viwU<ESC>
+
+" Make search case insensitive
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set pastetoggle=<F3>
+set clipboard=unnamedplus
+"nnoremap y "+y
+"nnoremap p "+p
+nmap <leader><leader>q :q!<CR>
+"set nobackup
+"set nowritebackup
+"set noswapfile
+" goto end of file and center the screen and go to insert mode
+nnoremap <C-g> Gzzo
+nmap <leader>d "_d
+" go to start of line
+nnoremap H 0
+nnoremap L $
+nmap <CR> G
+"nnoremap ; mqA;<esc>`q
+nnoremap gf :vertical wincmd f<CR>
+
+
+nnoremap gm m
+" EasyClip plugin
+nmap M <Plug>MoveMotionEndOfLinePlug
+let g:EasyClipUseSubstituteDefaults=1
+let g:EasyClipShareYanks=1
+
+let g:EasyClipUsePasteToggleDefaults = 0
+nmap <c-f> <plug>EasyClipSwapPasteForward
+nmap <c-d> <plug>EasyClipSwapPasteBackwards
+let g:airline_theme='wombat'
