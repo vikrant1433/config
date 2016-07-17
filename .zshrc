@@ -125,7 +125,12 @@ alias 'lnt'='vim ~/Dropbox/notes/linux-notes.md'
 # edit todos
 alias 'todos'='vim ~/Dropbox/notes/todo.md'
 
+# open ~/Dropbox/notes/idea-notes.md file for editing in vim
 alias 'idea-notes'='vim ~/Dropbox/notes/idea-notes.md'
+# open ~/Dropbox/notes/awk-notes.md file for editing in vim
+alias 'awk-notes'=vim\ ~/Dropbox/notes/awk-notes.md
+# open ~/Dropbox/config/ directory 
+alias 'config'='cd ~/Dropbox/config/'
 #=====================================================#
 # tx
 # general aliases
@@ -182,7 +187,7 @@ alias 'v'='xclip -o'
 alias 'scp'='scp -r'
 # my exports
 ###################################################
-alias ubuntu='lsb_release -d'
+alias 'ubuntu'='lsb_release -d'
 # ALL SSH ALIASES
 # ssh fokat
 alias 'fokat'='ssh fokat'
@@ -200,8 +205,8 @@ alias 'vega'='ssh -t vega "zsh"'
 alias 'juno'='ssh -t juno "zsh"'
 # ssh safestreet
 alias 'safestreet'='ssh -t safestreet "zsh"'
-#  my export
 
+eval $(dircolors -b $HOME/.dircolors)
 # txend
 
 
@@ -216,4 +221,3 @@ export IMGUR_API_SECRET="f830fe6c79f063c88370689ca77f6af1906b0cfd"
 export PATH="/home/vikrant/Dropbox/scritps:$PATH"
 export SSHPASS="1"
 export TERM=xterm-256color
-alias awk-notes=vim\ ~/Dropbox/notes/awk-notes.md
