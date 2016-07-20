@@ -92,4 +92,10 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # my custom settings
-source ~/.zshrc.local
+
+if [ $USER = 'vikrant' ]; then
+    [ -f ~/Dropbox/config/.zshrc.local ] && source ~/Dropbox/config/.zshrc.local
+else
+    [ -f ~/config/.zshrc.local ] && source ~/config/.zshrc.local
+fi
+
