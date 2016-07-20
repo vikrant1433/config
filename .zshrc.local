@@ -132,8 +132,6 @@ export TERM=xterm-256color
 
 if [ $USER = 'vikrant' ]; then
     [ -f ~/Dropbox/config/.zshrc.local.me ] && source ~/Dropbox/config/.zshrc.local.me
-else
-    [ -f ~/config/.zshrc.local.me ] && source ~/config/.zshrc.local.me
 fi
 
 
