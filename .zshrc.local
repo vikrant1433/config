@@ -130,4 +130,6 @@ export IMGUR_API_SECRET="f830fe6c79f063c88370689ca77f6af1906b0cfd"
 export SSHPASS="1"
 export TERM=xterm-256color
 
-[ -f ~/Dropbox/config/.zshrc.local.me ] && source ~/Dropbox/config/.zshrc.local.me
+#[ -f ~/Dropbox/config/.zshrc.local.me ] && source ~/Dropbox/config/.zshrc.local.me
+
+#[ -f ~/config/.zshrc.local.me ] && source ~/config/.zshrc.local.me
