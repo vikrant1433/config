@@ -5,33 +5,30 @@ export EDITOR="vim"
 export USE_EDITOR=$EDITOR
 export VISUAL=$EDITOR
 
-
-export PATH="/home/vikrant/software/arcanist/arcanist/bin:$PATH"
-
+#export PATH="/home/vikrant/software/arcanist/arcanist/bin:$PATH"
 
 # LS_COLORS
-eval $(dircolors -b $HOME/.dircolors)
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-
+#eval $(dircolors -b $HOME/.dircolors)
+#zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
-[[ -s $BASE16_SHELL  ]] && source $BASE16_SHELL
+#BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
+#[[ -s $BASE16_SHELL  ]] && source $BASE16_SHELL
 
+# virtualenvwrapper
+#export WORKON_HOME=~/.py_envs
+#mkdir -p $WORKON_HOME
+#[ -f /usr/local/bin/virtualenvwrapper.sh ] source /usr/local/bin/virtualenvwrapper.sh
 
+# arcanist
+#export PATH="/home/vikrant/.arc/arcanist/bin/:$PATH"
+ #[ -f /home/vikrant/.arc/arcanist/resources/shell/bash-completion ] && source /home/vikrant/.arc/arcanist/resources/shell/bash-completion 
 
-export WORKON_HOME=~/.py_envs
-mkdir -p $WORKON_HOME
-source /usr/local/bin/virtualenvwrapper.sh
-export PATH="/home/vikrant/.arc/arcanist/bin/:$PATH"
-source /home/vikrant/.arc/arcanist/resources/shell/bash-completion 
-export PATH="$PATH:/home/vikrant/Downloads/softwares/phantomjs-2.1.1-linux-x86_64/bin"
-
+# phantomjs
+#export PATH="$PATH:/home/vikrant/Downloads/softwares/phantomjs-2.1.1-linux-x86_64/bin"
 
 # to add vim functionality in the zsh shell
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-
 
 # personal aliases
 # change directory to ~/Dropbox/notes
@@ -126,15 +123,11 @@ alias 'safestreet'='ssh -t safestreet "zsh"'
 
 # txend
 
-
-
-
-
-
-
 # my exports
 export IMGUR_API_ID="d5de70e3a4036a6"
 export IMGUR_API_SECRET="f830fe6c79f063c88370689ca77f6af1906b0cfd"
-export PATH="/home/vikrant/Dropbox/scritps:$PATH"
+#export PATH="/home/vikrant/Dropbox/scritps:$PATH"
 export SSHPASS="1"
 export TERM=xterm-256color
+
+[ -f ~/Dropbox/config/.zshrc.local.me ] && source ~/Dropbox/config/.zshrc.local.me
