@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/$USER/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -93,8 +93,8 @@ fi
 
 # my custom settings
 
-if [ $USER = 'vikrant' ]; then
-    [ -f ~/Dropbox/config/.zshrc.local ] && source ~/Dropbox/config/.zshrc.local
+if [ -f ~/Dropbox/config/.zshrc.local ]; then
+    source ~/Dropbox/config/.zshrc.local
 else
     [ -f ~/config/.zshrc.local ] && source ~/config/.zshrc.local
 fi

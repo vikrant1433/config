@@ -66,6 +66,7 @@ alias 'bundle-install'='vim +BundleInstall! +BundleClean +q'
 # git fancy log
 alias 'glg1'="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 alias 'glg2'="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+alias 'glg'='glg1'
 # get the ip address of the machine
 alias 'ip'="ifconfig | grep \"inet addr:\" | sed 's/^  *//' |  cut -d' ' -f2 | cut -d':' -f2 | head -n1" 
 # open ~/.zshrc with vim for editing
@@ -137,7 +138,7 @@ export IMGUR_API_SECRET="f830fe6c79f063c88370689ca77f6af1906b0cfd"
 export SSHPASS="1"
 export TERM=xterm-256color
 
-if [ $USER = 'vikrant' ]; then
-    [ -f ~/Dropbox/config/.zshrc.local.me ] && source ~/Dropbox/config/.zshrc.local.me
+if [ -f ~/Dropbox/config/.zshrc.local.me ]; then
+    source ~/Dropbox/config/.zshrc.local.me
 fi
 
