@@ -4,3 +4,6 @@
 [submodule "vim-instant-markdown"]
 	path = vim-instant-markdown
 	url = git@github.com:suan/vim-instant-markdown.git
+[submodule "tpm"]
+	path = tpm
+	url = https://github.com/tmux-plugins/tpm
