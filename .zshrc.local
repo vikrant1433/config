@@ -51,13 +51,18 @@ alias 'config'='cd ~/Dropbox/config/'
 alias ':Q'=exit
 alias ':q'=exit
 # aliases for Tmux
-alias tmux='tmux -u -2'
-alias t='tmux -u -2'
-alias ta='tmux attach -t'
-alias tnew='tmux new -s'
-alias tls='tmux ls'
-alias tkill='tmux kill-session -t'
+alias 't'='tmux -u -2'
+#alias tmux='tmux -u -2'
+alias 'ta'='tmux attach -t'
+alias 'tnew'='tmux new -s'
+alias 'tls'='tmux ls'
+alias 'tkill'='tmux kill-session -t'
 
+# vim alias
+# install vim plugins
+alias 'bundle-install'='vim +BundleInstall! +BundleClean +q'
+# if open multiples file with vim open them in vertical split. usage: vim -O file1 file2 file3
+#alias 'vim'='vim -O' # temporarily not using it may break other things that depend on vim e.g. git difftool, vimdiff
 # git fancy log
 alias 'glg1'="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 alias 'glg2'="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
@@ -65,6 +70,8 @@ alias 'glg2'="git log --graph --abbrev-commit --decorate --format=format:'%C(bol
 alias 'ip'="ifconfig | grep \"inet addr:\" | sed 's/^  *//' |  cut -d' ' -f2 | cut -d':' -f2 | head -n1" 
 # open ~/.zshrc with vim for editing
 alias ',ez'='vim ~/.zshrc'
+# open ~/.zshrc.local with vim for editing
+alias ',ezl'='vim ~/.zshrc.local'
 # open ~/.ssh/config with vim for editing
 alias ',es'='vim ~/.ssh/config'
 # source ~/.zshrc
@@ -83,9 +90,9 @@ alias 'tar'='tar -czvf'
 # untar
 alias 'untar'='tar -xjvf'
 # delete vim swap files
-alias 'ds'='rm ~/.vimswap/\* -fr'
+#alias 'ds'='rm ~/.vimswap/\* -fr'
 # edit ~/.ssh/config
-alias 'essh'='vim ~/.ssh/config'
+#alias 'essh'='vim ~/.ssh/config'
 # pip freeze
 alias 'pf'='pip freeze'
 # xclip copy 
@@ -133,5 +140,4 @@ export TERM=xterm-256color
 if [ $USER = 'vikrant' ]; then
     [ -f ~/Dropbox/config/.zshrc.local.me ] && source ~/Dropbox/config/.zshrc.local.me
 fi
-
 

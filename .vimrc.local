@@ -124,17 +124,18 @@ set pastetoggle=<F3>
 set clipboard=unnamedplus
 "nnoremap y "+y
 "nnoremap p "+p
-nmap <leader><leader>q :q!<CR>
+"nmap <leader><leader>q :q!<CR>
 "set nobackup
 "set nowritebackup
 "set noswapfile
 " goto end of file and center the screen and go to insert mode
 nnoremap <C-g> Gzzo
-nmap <leader>d "_d
+" below nmap <leader>d "_d  is built into the EasyClip plugin
+"nmap <leader>d "_d
 " go to start of line
 nnoremap H 0
 nnoremap L $
-nmap <CR> G
+"nmap <CR> G
 "nnoremap ; mqA;<esc>`q
 nnoremap gf :vertical wincmd f<CR>
 
@@ -163,4 +164,12 @@ function! s:align()
     call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
   endif
 endfunction
+" vim-instant-markdown plugin 
+" refesh the changes only when no keys have been pressed for a while or a
+" while after we leave insert mode or we save the file being edited
+let g:instant_markdown_slow = 1
+" vim-intant-markdown will not automatically launch the browser preview window
+" when we open a markdown file. To manually trigger preview the command is
+" :InstantMarkdownPreview
+let g:instant_markdown_autostart = 0
 
