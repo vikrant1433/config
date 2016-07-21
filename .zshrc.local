@@ -8,8 +8,10 @@ export VISUAL=$EDITOR
 #export PATH="/home/vikrant/software/arcanist/arcanist/bin:$PATH"
 
 # LS_COLORS
-#eval $(dircolors -b $HOME/.dircolors)
-#zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+if [ -f $HOME/.dircolors ]; then
+    eval $(dircolors -b $HOME/.dircolors)
+    zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+fi
 
 # Base16 Shell
 #BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
