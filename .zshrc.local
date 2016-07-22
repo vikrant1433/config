@@ -110,6 +110,8 @@ alias 'v'='xclip -o'
 #alias 'img'='imgur-uploader'
 # scp with recursive flag
 alias 'scp'='scp -r'
+# rsync -arvu
+alias 'rs'='rsync -arvu'
 # my exports
 ###################################################
 alias 'ubuntu'='lsb_release -d'
@@ -130,6 +132,10 @@ alias 'vega'='ssh -t vega "zsh"'
 alias 'juno'='ssh -t juno "zsh"'
 # ssh safestreet
 alias 'safestreet'='ssh -t safestreet "zsh"'
+# ssh vacha
+alias 'vacha'='ssh -t vacha "zsh"'
+# ssh vacha-root
+alias 'vacha-root'='ssh -t vacha-root "zsh"'
 
 # txend
 
