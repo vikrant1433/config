@@ -33,18 +33,6 @@ if [ $(dpkg-query -W -f='${Status}' zsh 3>/dev/null | grep -c "ok installed") -e
 else
     echo "zsh already installed"
 fi
-#
-# OH-MY-ZSH
-#
-############################################################################
-# install oh-my-zsh
-if [ ! -d ~/.oh-my-zsh ]; then
-    echo "installing oh-my-zsh"
-    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-else
-    echo "oh-my-zsh already installed"
-fi
-
 ############################################################################
 #
 # install vim-gnome
@@ -60,19 +48,6 @@ if [ $(dpkg-query -W -f='${Status}' vim-gnome 3>/dev/null | grep -c "ok installe
 else
     echo "vim-gnome already installed"
 fi
-############################################################################
-# VIM-SPF13
-#
-############################################################################
-# install vim-spf13
-# if spf13-vim3 directory is not there install vim-spf13
-if [ ! -d ~/.spf13-vim-3 ]; then
-    echo "installing vim-spf13"
-    curl http://j.mp/spf13-vim3 -L -o - | sh
-else
-    echo "vim-spf13 already installed"
-fi
-
 
 #-------------------------------------------------------------------------------
 # install tmux
@@ -89,3 +64,28 @@ if [ $(dpkg-query -W -f='${Status}' tmux 3>/dev/null | grep -c "ok installed") -
 else
     echo "tmux already installed"
 fi
+############################################################################
+# VIM-SPF13
+#
+############################################################################
+# install vim-spf13
+# if spf13-vim3 directory is not there install vim-spf13
+if [ ! -d ~/.spf13-vim-3 ]; then
+    echo "installing vim-spf13"
+    curl http://j.mp/spf13-vim3 -L -o - | sh
+else
+    echo "vim-spf13 already installed"
+fi
+
+#
+# OH-MY-ZSH
+#
+############################################################################
+# install oh-my-zsh
+if [ ! -d ~/.oh-my-zsh ]; then
+    echo "installing oh-my-zsh"
+    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+else
+    echo "oh-my-zsh already installed"
+fi
+
