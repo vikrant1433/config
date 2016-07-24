@@ -4,3 +4,8 @@
 .ssh/known_hosts
 .ssh/ssh.awk
 etc/
+delete_zcompdump.sh
+setup.sh
+tmux_install.sh
+update.sh
+vim_plugin_install.sh
