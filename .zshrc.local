@@ -79,6 +79,10 @@ alias 'ip'="ifconfig | grep \"inet addr:\" | sed 's/^  *//' |  cut -d' ' -f2 | c
 alias ',ez'='vim ~/.zshrc'
 # open ~/.zshrc.local with vim for editing
 alias ',ezl'='vim ~/.zshrc.local'
+
+# open ~/.zshrc.local.me with vim for editing
+alias ',ezlm'='vim ~/.zshrc.local.me'
+
 # open ~/.ssh/config with vim for editing
 alias ',es'='vim ~/.ssh/config'
 # source ~/.zshrc
@@ -117,7 +121,18 @@ alias 'scp'='scp -r'
 # rsync -arvu
 alias 'rs'='rsync -arvu'
 # find directory
-alias 'f'='l | grep'
+alias 'lsg'='ls | grep'
+# find directory also includes hidden directory
+alias 'lg'='l | grep'
+# echo the full path of a file name
+alias 'rl'='readlink -f '
+
+# DJANGO ALIAS
+# runserver
+alias 'drs'='python manage.py runserver '
+# END DJANGO ALIAS
+
+
 # my exports
 ###################################################
 alias 'ubuntu'='lsb_release -d'
@@ -144,8 +159,7 @@ alias 'vacha'='ssh -t vacha "zsh"'
 alias 'vacha-root'='ssh -t vacha-root "zsh"'
 # ssh lappi
 alias 'lappi'='ssh -t lappi "zsh"'
-# txend
-
+# END SSH ALIAS
 # my exports
 export IMGUR_API_ID="d5de70e3a4036a6"
 export IMGUR_API_SECRET="f830fe6c79f063c88370689ca77f6af1906b0cfd"
@@ -153,7 +167,4 @@ export IMGUR_API_SECRET="f830fe6c79f063c88370689ca77f6af1906b0cfd"
 export SSHPASS="1"
 export TERM=xterm-256color
 
-if [ -f ~/Dropbox/config/.zshrc.local.me ]; then
-    source ~/Dropbox/config/.zshrc.local.me
-fi
-
+[ -f ~/Dropbox/config/.zshrc.local.me ] && source ~/Dropbox/config/.zshrc.local.me

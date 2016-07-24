@@ -1,23 +1,23 @@
 "UI changes {
     " for making base16 show colors properly
-    let base16colorspace=256
+    " "let base16colorspace=256
     " for making screen show colors properly
     "if &term == "screen"
       "set t_Co=256
     "endif
     syntax enable
-    "colorschemes
-    "colorscheme molokai
-    " tx
     if has('gui_running')
         colorscheme codeschool
         set guifont=Consolas\ 15
     else
-        "colorscheme base16-default-dark
-        colorscheme wombat256
+        "colorscheme sol
+        colorscheme jellybeans
+        "colorscheme evening
+        "colorscheme github
     endif
-    " txend
-    "colorscheme wombat256mod
+    if &diff
+        colorscheme evening
+    endif
     " bold the current line
     set cursorline
     hi CursorLine term=bold cterm=bold guibg=Grey40
@@ -40,6 +40,7 @@
 
 " Environment {
 
+    set wildignorecase
     set ignorecase " Make search case insensitive
     set smartcase
     set pastetoggle=<F3>
@@ -140,7 +141,7 @@
 
         " refesh the changes only when no keys have been pressed for a while or a
         " while after we leave insert mode or we save the file being edited
-        let g:instant_markdown_slow = 1
+        let g:instant_markdown_slow = 0
         " vim-intant-markdown will not automatically launch the browser preview window
         " when we open a markdown file. To manually trigger preview the command is
         " :InstantMarkdownPreview

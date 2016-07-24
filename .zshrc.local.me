@@ -7,17 +7,17 @@ export PATH="/home/vikrant/Dropbox/scritps:$PATH"
 
 
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
-[[ -s $BASE16_SHELL  ]] && source $BASE16_SHELL
+# BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
+# [[ -s $BASE16_SHELL  ]] && source $BASE16_SHELL
 
 # virtualenvwrapper
 export WORKON_HOME=~/.py_envs
 mkdir -p $WORKON_HOME
-source /usr/local/bin/virtualenvwrapper.sh
+[ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
 
 # arcanist
 export PATH="/home/vikrant/.arc/arcanist/bin/:$PATH"
-source /home/vikrant/.arc/arcanist/resources/shell/bash-completion 
+[ -f /home/vikrant/.arc/arcanist/resources/shell/bash-completion  ] && source /home/vikrant/.arc/arcanist/resources/shell/bash-completion 
 
 # phantomjs
 export PATH="$PATH:/home/vikrant/Downloads/softwares/phantomjs-2.1.1-linux-x86_64/bin"
