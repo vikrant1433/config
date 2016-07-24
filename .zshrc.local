@@ -83,6 +83,9 @@ alias ',ezl'='vim ~/.zshrc.local'
 # open ~/.zshrc.local.me with vim for editing
 alias ',ezlm'='vim ~/.zshrc.local.me'
 
+# open ~/.vimrc.bundles.local with vim for editing
+alias ',eb'='vim ~/.vimrc.bundles.local'
+
 # open ~/.ssh/config with vim for editing
 alias ',es'='vim ~/.ssh/config'
 # source ~/.zshrc
