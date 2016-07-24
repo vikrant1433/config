@@ -11,13 +11,16 @@
         set guifont=Consolas\ 15
     else
         "colorscheme sol
-        colorscheme jellybeans
+        "colorscheme jellybeans
         "colorscheme evening
         "colorscheme github
+        "colorscheme PaperColor
+        colorscheme hybrid_material
+        let g:enable_bold_font = 1
     endif
-    if &diff
-        colorscheme evening
-    endif
+    "if &diff
+        "colorscheme evening
+    "endif
     " bold the current line
     set cursorline
     hi CursorLine term=bold cterm=bold guibg=Grey40
@@ -116,7 +119,7 @@
     " }
 
     " AIRLINE_THEME {
-        let g:airline_theme='wombat'
+        let g:airline_theme='jellybeans'
     " }
 
     " BASH-SUPPORT {
