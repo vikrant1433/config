@@ -4,7 +4,7 @@ Bundle 'svermeulen/vim-easyclip'
 Bundle 'bash-support.vim'
 Bundle 'wesQ3/vim-windowswap'
 
-
+UnBundle 'gko/vim-coloresque'
 UnBundle 'xolox/vim-colorscheme-switcher'
 UnBundle 'terryma/vim-expand-region'
 UnBundle 'scrooloose/syntastic'

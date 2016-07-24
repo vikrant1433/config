@@ -32,21 +32,22 @@ fi
 # to add vim functionality in the zsh shell
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# personal aliases
+# change directory aliases
 # change directory to ~/Dropbox/notes
-alias 'notes'='cd ~/Dropbox/notes/'
-alias 'vim-notes'='vim ~/Dropbox/notes/vim-notes.md'
-# edit linux-notes
-alias 'lnt'='vim ~/Dropbox/notes/linux-notes.md'
-# edit todos
-alias 'todos'='vim ~/Dropbox/notes/todo.md'
-
-# open ~/Dropbox/notes/idea-notes.md file for editing in vim
-alias 'idea-notes'='vim ~/Dropbox/notes/idea-notes.md'
-# open ~/Dropbox/notes/awk-notes.md file for editing in vim
-alias 'awk-notes'=vim\ ~/Dropbox/notes/awk-notes.md
-# open ~/Dropbox/config/ directory 
-alias 'config'='cd ~/Dropbox/config/'
+if [ -d ~/Dropbox ]; then
+    alias 'notes'='cd ~/Dropbox/notes/'
+    alias 'vim-notes'='vim ~/Dropbox/notes/vim-notes.md'
+    # edit linux-notes
+    alias 'lnt'='vim ~/Dropbox/notes/linux-notes.md'
+    # edit todos
+    alias 'todos'='vim ~/Dropbox/notes/todo.md'
+    # open ~/Dropbox/notes/idea-notes.md file for editing in vim
+    alias 'idea-notes'='vim ~/Dropbox/notes/idea-notes.md'
+    # open ~/Dropbox/notes/awk-notes.md file for editing in vim
+    alias 'awk-notes'=vim\ ~/Dropbox/notes/awk-notes.md
+    # open ~/Dropbox/config/ directory 
+    alias 'config'='cd ~/Dropbox/config/'
+fi
 #=====================================================#
 # tx
 # general aliases
@@ -59,6 +60,9 @@ alias 'ta'='tmux attach -t'
 alias 'tnew'='tmux new -s'
 alias 'tls'='tmux ls'
 alias 'tkill'='tmux kill-session -t'
+
+# nginx alias
+alias 'ngr'='sudo service nginx restart'
 
 # vim alias
 # install vim plugins
@@ -112,6 +116,8 @@ alias 'v'='xclip -o'
 alias 'scp'='scp -r'
 # rsync -arvu
 alias 'rs'='rsync -arvu'
+# find directory
+alias 'f'='l | grep'
 # my exports
 ###################################################
 alias 'ubuntu'='lsb_release -d'
@@ -136,7 +142,8 @@ alias 'safestreet'='ssh -t safestreet "zsh"'
 alias 'vacha'='ssh -t vacha "zsh"'
 # ssh vacha-root
 alias 'vacha-root'='ssh -t vacha-root "zsh"'
-
+# ssh lappi
+alias 'lappi'='ssh -t lappi "zsh"'
 # txend
 
 # my exports

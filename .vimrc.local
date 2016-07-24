@@ -1,175 +1,156 @@
 "UI changes {
-" for making base16 show colors properly
-let base16colorspace=256
-" for making screen show colors properly
-if &term == "screen"
-  set t_Co=256
-endif
-syntax enable
-"colorschemes
-"colorscheme molokai
-" tx
-if has('gui_running')
-    colorscheme codeschool
-    set guifont=Consolas\ 15
-else
-    colorscheme base16-default-dark
-    "colorscheme wombat256
-endif
-" txend
-"colorscheme wombat256mod
-" bold the current line
-set cursorline
-hi CursorLine term=bold cterm=bold guibg=Grey40
-" disable highlighting of tabs
-let g:indent_guides_enable_ov_vim_startup=0 
-set number
-set relativenumber
-set wrap
-set linebreak
-" Use the same symbols as TextMate for tabstops and EOLs
-" show tabs and newline characters
-"set listchars=tab:▸\ ,eol:¬
-set listchars=tab:▸\ ,trail:•,extends:#,nbsp:.,eol:¬,space:. " Highlight problematic whitespace
-set nospell
-set nolist
-hi clear SpellBad
-" doesn't highlighting braceses matching
-let g:loaded_matchparen=1
-let g:airline_theme='base16'
+    " for making base16 show colors properly
+    let base16colorspace=256
+    " for making screen show colors properly
+    "if &term == "screen"
+      "set t_Co=256
+    "endif
+    syntax enable
+    "colorschemes
+    "colorscheme molokai
+    " tx
+    if has('gui_running')
+        colorscheme codeschool
+        set guifont=Consolas\ 15
+    else
+        "colorscheme base16-default-dark
+        colorscheme wombat256
+    endif
+    " txend
+    "colorscheme wombat256mod
+    " bold the current line
+    set cursorline
+    hi CursorLine term=bold cterm=bold guibg=Grey40
+    " disable highlighting of tabs
+    let g:indent_guides_enable_ov_vim_startup=0
+    set relativenumber
+    set wrap
+    set linebreak
+    " Use the same symbols as TextMate for tabstops and EOLs
+    " show tabs and newline characters
+    "set listchars=tab:▸\ ,eol:¬
+    set listchars=tab:▸\ ,trail:•,extends:#,nbsp:.,eol:¬,space:. " Highlight problematic whitespace
+    set nospell " disable spell check
+    hi clear SpellBad
+    set nolist
+    " doesn't highlighting braceses matching
+    let g:loaded_matchparen=1
 
-"}
+" }
 
-" mappings
-" to go to normal mode and keep the cursor at its original position
-inoremap jk <esc>l
-" vnoremap jk <esc>
-"make zsh as default shell for vim
-set shell=/usr/bin/zsh
-" Shortcut to rapidly toggle `set list`
-nnoremap <leader>l :set list!<CR>
-"set listchars=tab:-\ ,eol:¬
-" open ~/.vimrc.local for in vertical split for editing
-nnoremap <silent> <leader>ev :vsplit ~/.vimrc.local<CR>
-nnoremap <silent> <leader>sv :source $MYVIMRC<CR>
-" paste below the line
-"nnoremap <leader>p o<ESC>p
-" inserting date with F5
-nnoremap <F5> "=strftime("%d-%b-%Y")<CR>P
-inoremap <F5> <C-R>=strftime("%d-%b-%Y")<CR>
-" indentation with tab and shift + tab key in normal and Visual mode
-" for command mode
-"nnoremap <S-Tab> <<
-"nnoremap <Tab> >>
-" for insert mode
-"inoremap <S-Tab> <C-d>
-"set nohlsearch
+" Environment {
 
-" <Ctrl-l> redraws the screen and removes any search highlighting.
-nnoremap <silent> <C-l> :nohl<CR><C-l>
+    set ignorecase " Make search case insensitive
+    set smartcase
+    set pastetoggle=<F3>
+    set clipboard=unnamedplus
+    set shell=/usr/bin/zsh "make zsh as default shell for vim
+" }
 
-" move the current line down
-nnoremap <S-down> :m +1<CR>
-" move the current line up
-nnoremap <S-up> :m -2<CR>
-nnoremap <right> <Nop>
-nnoremap <left> <Nop>
+" MAPPINGS {
+    " go to normal mode and keep the cursor at its original position
+    inoremap jk <esc>l
 
-vnoremap <S-down> :m +1<CR>
-" move the current line up
-vnoremap <S-up> :m -2<CR>
+    " Shortcut to rapidly toggle set list
+    nnoremap <leader>l :set list!<CR>
 
-"ino <down> <Nop>
-"ino <left> <Nop>
-"ino <right> <Nop>
-"ino <up> <Nop>
+    " open ~/.vimrc.local for in vertical split for editing
+    nnoremap <silent> <leader>ev :vsplit ~/.vimrc.local<CR>
+    nnoremap <silent> <leader>en :vsplit ~/Dropbox/notes/vim-notes.md<CR>
+    nnoremap <silent> <leader>sv :source $MYVIMRC<CR>
 
-" ============= Custom Mappings ==============
-" general mapping
-"nnoremap <Tab> :tabnext<CR>
-"nnoremap <S-Tab> :tabprevious<CR>
-"map <Tab> :tabnext<CR>
-"map <S-Tab> :tabprevious<CR>
-"inoremap <Tab> <ESC>:tabnext<CR>
-"inoremap <S-Tab> <ESC>:tabprevious<CR>
-" for auto centering 
-nnoremap G Gzz
-nnoremap n nzz
-nnoremap N Nzz
-nnoremap } }zz
-nnoremap { {zz
+    " inserting date with F5
+    nnoremap <F5> "=strftime("%d-%b-%Y")<CR>P
+    inoremap <F5> <C-R>=strftime("%d-%b-%Y")<CR>
 
-" gO put newline above the current line
-nnoremap gO O<ESC>j
+    " <Ctrl-l> redraws the screen and removes any search highlighting.
+    nnoremap <silent> <C-l> :nohl<CR><C-l>
 
-" g<C-O> put newline below the current line
-nnoremap g<C-O> o<ESC>k
-" easier moving of code blocks
-vnoremap > >gv      " better indentation
-" delete the line in insert mode
-inoremap <C-d> <ESC>ddi
-" undo in insert mode
-inoremap <C-z> <ESC>ui
-" upper case the word in insert mode
-"inoremap <C-u> <ESC>viwU<ESC>i
-" upper case the word in normal mode
-"nnoremap <C-u> viwU<ESC>
+    nnoremap <right> <Nop>
+    nnoremap <left> <Nop>
 
-" Make search case insensitive
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-set pastetoggle=<F3>
-set clipboard=unnamedplus
-"nnoremap y "+y
-"nnoremap p "+p
-"nmap <leader><leader>q :q!<CR>
-"set nobackup
-"set nowritebackup
-"set noswapfile
-" goto end of file and center the screen and go to insert mode
-nnoremap <C-g> Gzzo
-" below nmap <leader>d "_d  is built into the EasyClip plugin
-"nmap <leader>d "_d
-" go to start of line
-nnoremap H 0
-nnoremap L $
-"nmap <CR> G
-"nnoremap ; mqA;<esc>`q
-nnoremap gf :vertical wincmd f<CR>
+    " move the current line down
+    nnoremap <S-down> :m +1<CR>
+    " move the current line up
+    nnoremap <S-up> :m -2<CR>
+    " move the current line up
+    vnoremap <S-down> :m +1<CR>
+    " move the current line up
+    vnoremap <S-up> :m -2<CR>
 
+    " for auto centering
+        nnoremap G Gzz
+        nnoremap n nzz
+        nnoremap N Nzz
+        nnoremap } }zz
+        nnoremap { {zz
+    " put newline above the current line
+    nnoremap gO O<ESC>j
+    " g<C-O> put newline below the current line
+    nnoremap g<C-O> o<ESC>k
 
-nnoremap gm m
-" EasyClip plugin
-nmap M <Plug>MoveMotionEndOfLinePlug
-let g:EasyClipUseSubstituteDefaults=1
-let g:EasyClipShareYanks=1
+    " easier moving of code blocks
+    " better indentation
+    vnoremap > >gv
 
-let g:EasyClipUsePasteToggleDefaults = 0
-nmap <c-f> <plug>EasyClipSwapPasteForward
-nmap <c-d> <plug>EasyClipSwapPasteBackwards
-let g:airline_theme='wombat'
-let g:BASH_MapLeader = ','
+    " goto end of file and center the screen and go to insert mode
+    nnoremap <C-g> Gzzo
+    
+    " go to start of line
+    nnoremap H 0
+    " go to end of line
+    nnoremap L $
+    " open filename under to cursor in a vertical split
+    nnoremap gf :vertical wincmd f<CR>
 
-inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+    nnoremap gm m
 
-function! s:align()
-  let p = '^\s*|\s.*\s|\s*$'
-  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
-    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
-    Tabularize/|/l1
-    normal! 0
-    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-  endif
-endfunction
-" vim-instant-markdown plugin 
-" refesh the changes only when no keys have been pressed for a while or a
-" while after we leave insert mode or we save the file being edited
-let g:instant_markdown_slow = 1
-" vim-intant-markdown will not automatically launch the browser preview window
-" when we open a markdown file. To manually trigger preview the command is
-" :InstantMarkdownPreview
-let g:instant_markdown_autostart = 0
+    " EasyClip plugin {
+        nmap M <Plug>MoveMotionEndOfLinePlug
+        let g:EasyClipUseSubstituteDefaults=1
+        let g:EasyClipShareYanks=1
+        let g:EasyClipUsePasteToggleDefaults = 0
+        nmap <c-f> <plug>EasyClipSwapPasteForward
+        nmap <c-d> <plug>EasyClipSwapPasteBackwards
+    " }
 
+    " AIRLINE_THEME {
+        let g:airline_theme='wombat'
+    " }
+
+    " BASH-SUPPORT {
+        let g:BASH_MapLeader = '\'
+    " }
+
+    " Tabularize {
+        inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+        function! s:align()
+          let p = '^\s*|\s.*\s|\s*$'
+          if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+            let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+            let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+            Tabularize/|/l1
+            normal! 0
+            call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+          endif
+        endfunction
+    " }
+
+    " VIM-INSTANT-MARKDOWN PLUGIN {
+
+        " refesh the changes only when no keys have been pressed for a while or a
+        " while after we leave insert mode or we save the file being edited
+        let g:instant_markdown_slow = 1
+        " vim-intant-markdown will not automatically launch the browser preview window
+        " when we open a markdown file. To manually trigger preview the command is
+        " :InstantMarkdownPreview
+        let g:instant_markdown_autostart = 0
+
+    " }
+
+    " UNDOTREE PLUGIN {
+        if has("persistent_undo")
+            set undodir=~/.undodir/
+        endif
+    " }
+" }
