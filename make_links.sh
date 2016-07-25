@@ -23,6 +23,7 @@ ln -fs ~/config/.zshrc.local ~/.zshrc.local
 ln -fs ~/config/.zshrc.local.me ~/.zshrc.local.me
 
 # OH-MY-ZSH
+mkdir -p ~/.oh-my-zsh/custom/themes/
 ln -fs ~/config/.oh-my-zsh/custom/themes/dst.zsh-theme ~/.oh-my-zsh/custom/themes/dst.zsh-theme
 
 # VIM
