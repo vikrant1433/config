@@ -22,6 +22,9 @@ ln -fs ~/config/.zshrc ~/.zshrc
 ln -fs ~/config/.zshrc.local ~/.zshrc.local
 ln -fs ~/config/.zshrc.local.me ~/.zshrc.local.me
 
+# OH-MY-ZSH
+ln -fs ~/config/.oh-my-zsh/custom/themes/dst.zsh-theme ~/.oh-my-zsh/custom/themes/dst.zsh-theme
+
 # VIM
 ln -si ~/config/vimrc.local ~/.vimrc.local
 ln -si ~/config/.vimrc.bundles.local ~/.vimrc.bundles.local
