@@ -22,7 +22,7 @@ ln -si ~/config/.zshrc ~/.zshrc
 ln -si ~/config/.zshrc.local ~/.zshrc.local
 
 # VIM
-ln -si ~/config/vimrc.local ~/vimrc.local
+ln -si ~/config/vimrc.local ~/.vimrc.local
 ln -si ~/config/.vimrc.bundles.local ~/.vimrc.bundles.local
 
 #TMUX
