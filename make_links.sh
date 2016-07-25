@@ -36,3 +36,6 @@ ln -si ~/config/LS_COLORS/LS_COLORS ~/.dircolors
 # VIM-INSTANT-MARKDOWN
 mkdir -p ~/.vim/after/ftplugin/markdown/
 ln -si ~/config/vim-instant-markdown/after/ftplugin/markdown/instant-markdown.vim ~/.vim/after/ftplugin/markdown/instant-markdown.vim
+
+# .gitconfig
+ln -si ~/config/.gitconfig ~/.gitconfig
