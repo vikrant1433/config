@@ -45,8 +45,8 @@ if [ -d ~/Dropbox ]; then
     alias 'idea-notes'='vim ~/Dropbox/notes/idea-notes.md'
     # open ~/Dropbox/notes/awk-notes.md file for editing in vim
     alias 'awk-notes'=vim\ ~/Dropbox/notes/awk-notes.md
-    # open ~/Dropbox/config/ directory 
-    alias 'config'='cd ~/Dropbox/config/'
+    # open ~/config/ directory 
+    alias 'config'='cd ~/config/'
 fi
 #=====================================================#
 # tx
@@ -63,7 +63,8 @@ alias 'tkill'='tmux kill-session -t'
 
 # nginx alias
 alias 'ngr'='sudo service nginx restart'
-
+# ping test alias
+alias 'pt'='ping test'
 # vim alias
 # install vim plugins
 alias 'bundle-install'='vim +BundleInstall! +BundleClean +q'
@@ -74,6 +75,11 @@ alias 'glg1'="git log --graph --abbrev-commit --decorate --format=format:'%C(bol
 alias 'glg2'="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
 # git diff
 alias 'gd'='git difftool'
+# git add all the modified files
+alias 'gau'='git add -u'
+# git commit and push
+alias 'gcp'='gc && ggpush'
+
 alias 'glg'='glg1'
 # get the ip address of the machine
 alias 'ip'="ifconfig | grep \"inet addr:\" | sed 's/^  *//' |  cut -d' ' -f2 | cut -d':' -f2 | head -n1" 
@@ -172,5 +178,4 @@ export IMGUR_API_SECRET="f830fe6c79f063c88370689ca77f6af1906b0cfd"
 export SSHPASS="1"
 export TERM=xterm-256color
 
-[ -f ~/Dropbox/config/.zshrc.local.me ] && source ~/Dropbox/config/.zshrc.local.me
 [ -f ~/config/.zshrc.local.me ] && source ~/config/.zshrc.local.me

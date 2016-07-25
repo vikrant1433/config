@@ -18,8 +18,9 @@
 #===============================================================================
 
 # ZSH
-ln -si ~/config/.zshrc ~/.zshrc
-ln -si ~/config/.zshrc.local ~/.zshrc.local
+ln -fs ~/config/.zshrc ~/.zshrc
+ln -fs ~/config/.zshrc.local ~/.zshrc.local
+ln -fs ~/config/.zshrc.local.me ~/.zshrc.local.me
 
 # VIM
 ln -si ~/config/vimrc.local ~/.vimrc.local

@@ -91,11 +91,7 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# my custom settings
+# source my custom settings
 
-if [ -f ~/Dropbox/config/.zshrc.local ]; then
-    source ~/Dropbox/config/.zshrc.local
-else
-    [ -f ~/config/.zshrc.local ] && source ~/config/.zshrc.local
-fi
+[ -f ~/config/.zshrc.local ] && source ~/config/.zshrc.local
 
