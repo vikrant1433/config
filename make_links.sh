@@ -26,20 +26,20 @@ ln -fs ~/config/.zshrc.local.me ~/.zshrc.local.me
 ln -fs ~/config/.oh-my-zsh/custom/themes/dst.zsh-theme ~/.oh-my-zsh/custom/themes/dst.zsh-theme
 
 # VIM
-ln -si ~/config/vimrc.local ~/.vimrc.local
-ln -si ~/config/.vimrc.bundles.local ~/.vimrc.bundles.local
+ln -sf ~/config/vimrc.local ~/.vimrc.local
+ln -sf ~/config/.vimrc.bundles.local ~/.vimrc.bundles.local
 
 #TMUX
-ln -si ~/config/.tmux.conf ~/.tmux.conf
+ln -sf ~/config/.tmux.conf ~/.tmux.conf
 mkdir  -p ~/.tmux/plugins/tpm
-ln -si ~/config/tpm ~/.tmux/plugins/tpm
+ln -sf ~/config/tpm ~/.tmux/plugins/tpm
 
 # LS_COLORS
-ln -si ~/config/LS_COLORS/LS_COLORS ~/.dircolors
+ln -sf ~/config/LS_COLORS/LS_COLORS ~/.dircolors
 
 # VIM-INSTANT-MARKDOWN
 mkdir -p ~/.vim/after/ftplugin/markdown/
-ln -si ~/config/vim-instant-markdown/after/ftplugin/markdown/instant-markdown.vim ~/.vim/after/ftplugin/markdown/instant-markdown.vim
+ln -sf ~/config/vim-instant-markdown/after/ftplugin/markdown/instant-markdown.vim ~/.vim/after/ftplugin/markdown/instant-markdown.vim
 
 # .gitconfig
-ln -si ~/config/.gitconfig ~/.gitconfig
+ln -sf ~/config/.gitconfig ~/.gitconfig
