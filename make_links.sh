@@ -27,7 +27,7 @@ mkdir -p ~/.oh-my-zsh/custom/themes/
 ln -fs ~/config/.oh-my-zsh/custom/themes/dst.zsh-theme ~/.oh-my-zsh/custom/themes/dst.zsh-theme
 
 # VIM
-ln -sf ~/config/vimrc.local ~/.vimrc.local
+ln -sf ~/config/.vimrc.local ~/.vimrc.local
 ln -sf ~/config/.vimrc.bundles.local ~/.vimrc.bundles.local
 
 #TMUX
