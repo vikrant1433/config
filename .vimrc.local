@@ -94,9 +94,9 @@
         nnoremap } }zz
         nnoremap { {zz
     " put newline above the current line
-    nnoremap gO O<ESC>j
+    nnoremap gO O<ESC>
     " g<C-O> put newline below the current line
-    nnoremap g<C-O> o<ESC>k
+    nnoremap g<C-O> o<ESC>
 
     " easier moving of code blocks
     " better indentation
