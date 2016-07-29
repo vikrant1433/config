@@ -36,14 +36,15 @@
     set linebreak
     " Use the same symbols as TextMate for tabstops and EOLs
     " show tabs and newline characters
-    "set listchars=tab:▸\ ,eol:¬
     set listchars=tab:▸\ ,trail:•,extends:#,nbsp:.,eol:¬,space:. " Highlight problematic whitespace
     set nospell " disable spell check
     hi clear SpellBad
     set nolist
     " doesn't highlighting braceses matching
     let g:loaded_matchparen=1
-
+    " lighten the background color after 80 column width
+    let &colorcolumn=join(range(81,999),",")
+    highlight ColorColumn ctermbg=235 guibg=#2c2d27
 " }
 
 " Environment {
