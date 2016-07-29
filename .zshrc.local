@@ -37,6 +37,9 @@ fi
 if [ -d ~/Dropbox ]; then
     alias 'notes'='cd ~/Dropbox/notes/'
     alias 'vim-notes'='vim ~/Dropbox/notes/vim-notes.md'
+    alias 'git-notes'='vim ~/Dropbox/notes/git-notes.md'
+    alias ',ea'='vim ~/Dropbox/notes/annoyance.md'
+
     # edit linux-notes
     alias 'lnt'='vim ~/Dropbox/notes/linux-notes.md'
     # edit todos
@@ -132,7 +135,7 @@ alias 'scp'='scp -r'
 # rsync -arvu
 alias 'rs'='rsync -arvu'
 # find directory
-alias 'lsg'='ls | grep'
+alias 'lsg'='ls | grep -i '
 # find directory also includes hidden directory
 alias 'lg'='l | grep'
 # echo the full path of a file name
@@ -148,6 +151,8 @@ alias 'drs'='python manage.py runserver '
 ###################################################
 alias 'ubuntu'='lsb_release -d'
 # ALL SSH ALIASES
+# copy ssh public key to system clipboard
+alias 'sshkey'='cat ~/.ssh/id_rsa.pub | xclip -selection clipboard && echo "ssh public key copied to clipboard."'
 # ssh fokat
 alias 'fokat'='ssh fokat'
 # ssh room

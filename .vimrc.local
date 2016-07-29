@@ -22,6 +22,11 @@
         "colorscheme evening
     "endif
     " bold the current line
+    if &diff
+        " diff mode"
+        set diffopt+=iwhite
+        set diffexpr=""
+    endif
     set cursorline
     hi CursorLine term=bold cterm=bold guibg=Grey40
     " disable highlighting of tabs
