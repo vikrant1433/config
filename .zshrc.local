@@ -130,6 +130,17 @@ alias 's'='screen '
 alias 'v'='xclip -o'
 # imgur-uploader
 #alias 'img'='imgur-uploader'
+imgurl()
+{
+    if [ "$#" -lt 1 ]; then
+        echo "usage imgur /path/to/your/img.ext"
+    else 
+        url=`imgur-uploader $1 | sed -n '2p' | cut -d' ' -f8 `
+        echo "image link ${url} is copied to clipboard!"
+        echo ${url} | cs
+    fi
+    
+}
 # scp with recursive flag
 alias 'scp'='scp -r'
 # rsync -arvu
