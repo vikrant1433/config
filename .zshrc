@@ -56,7 +56,7 @@ ZSH_THEME="dst"
 # plugins=(git)
 # tx
 # plugins
-plugins=(sudo git z themes ubuntu zsh-syntax-highlighting)
+plugins=(copydir copyfile sudo git z themes ubuntu zsh-syntax-highlighting)
 # txend
 
 # User configuration
