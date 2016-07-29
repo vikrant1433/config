@@ -3,6 +3,12 @@ Bundle 'chriskempson/base16-vim'
 Bundle 'svermeulen/vim-easyclip'
 Bundle 'bash-support.vim'
 Bundle 'wesQ3/vim-windowswap'
+Bundle 'Shougo/vimproc.vim'
+Bundle 'kana/vim-operator-user'
+Bundle 'rhysd/vim-clang-format'
+
+
+
 
 UnBundle 'gko/vim-coloresque'
 UnBundle 'xolox/vim-colorscheme-switcher'
