@@ -8,8 +8,7 @@ Bundle 'kana/vim-operator-user'
 Bundle 'rhysd/vim-clang-format'
 Bundle 'tmux-plugins/vim-tmux-focus-events'
 Bundle 'blueyed/vim-diminactive'
-
-
+"Bundle 'Shougo/vimshell.vim'
 
 
 UnBundle 'gko/vim-coloresque'
