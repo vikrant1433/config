@@ -64,6 +64,12 @@ if [ $(dpkg-query -W -f='${Status}' tmux 3>/dev/null | grep -c "ok installed") -
 else
     echo "tmux already installed"
 fi
+# vim-instant-markdown dependencies
+sudo npm -g install instant-markdown-d -y
+sudo apt-get install nodejs-legacy -y
+sudo apt-get install curl -y
+sudo apt-get install xdg-utils -y
+
 ############################################################################
 # VIM-SPF13
 #
