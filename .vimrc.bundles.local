@@ -6,6 +6,8 @@ Bundle 'wesQ3/vim-windowswap'
 Bundle 'Shougo/vimproc.vim'
 Bundle 'kana/vim-operator-user'
 Bundle 'rhysd/vim-clang-format'
+Bundle 'tmux-plugins/vim-tmux-focus-events'
+Bundle 'blueyed/vim-diminactive'
 
 
 

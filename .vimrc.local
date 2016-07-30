@@ -66,6 +66,7 @@
 
     " open ~/.vimrc.local for in vertical split for editing
     nnoremap <silent> <leader>ev :vsplit ~/.vimrc.local<CR>
+    nnoremap <silent> <leader>eb :vsplit ~/.vimrc.bundles.local<CR>
     nnoremap <silent> <leader>en :vsplit ~/Dropbox/notes/vim-notes.md<CR>
     nnoremap <silent> <leader>sv :source $MYVIMRC<CR>
 
