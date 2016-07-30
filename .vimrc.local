@@ -110,7 +110,7 @@
     " go to start of line
     nnoremap H 0
     " go to end of line
-    nnoremap L $
+    nnoremap L g_
     " open filename under to cursor in a vertical split
     nnoremap gf :vertical wincmd f<CR>
 
