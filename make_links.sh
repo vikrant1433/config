@@ -17,33 +17,35 @@
 #      REVISION:  ---
 #===============================================================================
 
+cd "`dirname \"$0\"`"
+SCRIPT_ABS_PATH=${PWD}
 # ZSH
-ln -fs ~/config/.zshrc ~/.zshrc
-ln -fs ~/config/.zshrc.local ~/.zshrc.local
-ln -fs ~/config/.zshrc.local.me ~/.zshrc.local.me
+ln -fs ${SCRIPT_ABS_PATH}/.zshrc ~/.zshrc
+ln -fs ${SCRIPT_ABS_PATH}/.zshrc.local ~/.zshrc.local
+ln -fs ${SCRIPT_ABS_PATH}/.zshrc.local.me ~/.zshrc.local.me
 
 # OH-MY-ZSH
 mkdir -p ~/.oh-my-zsh/custom/themes/
-ln -fs ~/config/.oh-my-zsh/custom/themes/dst.zsh-theme ~/.oh-my-zsh/custom/themes/dst.zsh-theme
+ln -fs ${SCRIPT_ABS_PATH}/.oh-my-zsh/custom/themes/dst.zsh-theme ~/.oh-my-zsh/custom/themes/dst.zsh-theme
 
 # ZSH-SYNTAX-HIGHLIGHTING
-ln -sf ~/config/zsh-syntax-highlighting ~/.oh-my-zsh/plugins/
+ln -sf ${SCRIPT_ABS_PATH}/zsh-syntax-highlighting ~/.oh-my-zsh/plugins/
 
 # VIM
-ln -sf ~/config/.vimrc.local ~/.vimrc.local
-ln -sf ~/config/.vimrc.bundles.local ~/.vimrc.bundles.local
+ln -sf ${SCRIPT_ABS_PATH}/.vimrc.local ~/.vimrc.local
+ln -sf ${SCRIPT_ABS_PATH}/.vimrc.bundles.local ~/.vimrc.bundles.local
 
 #TMUX
-ln -sf ~/config/.tmux.conf ~/.tmux.conf
+ln -sf ${SCRIPT_ABS_PATH}/.tmux.conf ~/.tmux.conf
 mkdir  -p ~/.tmux/plugins/tpm
-ln -sf ~/config/tpm ~/.tmux/plugins/tpm
+ln -sf ${SCRIPT_ABS_PATH}/tpm ~/.tmux/plugins/tpm
 
 # LS_COLORS
-ln -sf ~/config/LS_COLORS/LS_COLORS ~/.dircolors
+ln -sf ${SCRIPT_ABS_PATH}/LS_COLORS/LS_COLORS ~/.dircolors
 
 # VIM-INSTANT-MARKDOWN
 mkdir -p ~/.vim/after/ftplugin/markdown/
-ln -sf ~/config/vim-instant-markdown/after/ftplugin/markdown/instant-markdown.vim ~/.vim/after/ftplugin/markdown/instant-markdown.vim
+ln -sf ${SCRIPT_ABS_PATH}/vim-instant-markdown/after/ftplugin/markdown/instant-markdown.vim ~/.vim/after/ftplugin/markdown/instant-markdown.vim
 
 # .gitconfig
-ln -sf ~/config/.gitconfig ~/.gitconfig
+ln -sf ${SCRIPT_ABS_PATH}/.gitconfig ~/.gitconfig
