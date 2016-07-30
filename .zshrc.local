@@ -52,7 +52,6 @@ if [ -d ~/Dropbox ]; then
     alias 'config'='cd ~/config/'
 fi
 #=====================================================#
-# tx
 # general aliases
 alias ':Q'=exit
 alias ':q'=exit
@@ -186,6 +185,8 @@ alias 'vacha'='ssh -t vacha "zsh"'
 alias 'vacha-root'='ssh -t vacha-root "zsh"'
 # ssh lappi
 alias 'lappi'='ssh -t lappi "zsh"'
+# ssh dearu
+alias 'dearu'='ssh -t dearu "zsh"'
 # END SSH ALIAS
 # my exports
 export IMGUR_API_ID="d5de70e3a4036a6"
