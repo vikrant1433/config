@@ -109,7 +109,7 @@ alias ',et'='vim ~/.tmux.conf'
 # edit ~/.vimrc.local
 alias ',ev'='vim ~/.vimrc.local'
 # exit terminal
-alias 'x'='exit'
+#alias 'x'='exit'
 # tar
 alias 'tar'='tar -czvf'
 # untar
@@ -120,14 +120,12 @@ alias 'untar'='tar -xjvf'
 #alias 'essh'='vim ~/.ssh/config'
 # pip freeze
 alias 'pf'='pip freeze'
-# xclip copy 
-alias 'cs'='xclip -selection clipboard'
 # xclip copy to system clipboard
-alias 'c'='xclip '
+alias 'cs'='xclip -selection clipboard'
+# xclip copy 
+#alias 'c'='xclip '
 # xclip paste
-alias 's'='screen '
-# xclip paste
-alias 'v'='xclip -o'
+#alias 'v'='xclip -o'
 # imgur-uploader
 #alias 'img'='imgur-uploader'
 imgurl()
