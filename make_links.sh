@@ -47,5 +47,8 @@ ln -sf ${SCRIPT_ABS_PATH}/LS_COLORS/LS_COLORS ~/.dircolors
 mkdir -p ~/.vim/after/ftplugin/markdown/
 ln -sf ${SCRIPT_ABS_PATH}/vim-instant-markdown/after/ftplugin/markdown/instant-markdown.vim ~/.vim/after/ftplugin/markdown/instant-markdown.vim
 
-# .gitconfig
+# .GITCONFIG
 ln -sf ${SCRIPT_ABS_PATH}/.gitconfig ~/.gitconfig
+
+#SSH
+ln -sf ${SCRIPT_ABS_PATH}/.ssh/config ~/.ssh/config
