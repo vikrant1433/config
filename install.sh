@@ -94,4 +94,5 @@ if [ ! -d ~/.oh-my-zsh ]; then
 else
     echo "oh-my-zsh already installed"
 fi
-
+# install plugins in ~/.vimrc.bundles.local
+vim +PluginInstall +qall
