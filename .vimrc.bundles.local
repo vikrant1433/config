@@ -1,5 +1,15 @@
+UnBundle 'tpope/vim-markdown'
+UnBundle 'gko/vim-coloresque'
+UnBundle 'xolox/vim-colorscheme-switcher'
+UnBundle 'terryma/vim-expand-region'
+UnBundle 'scrooloose/syntastic'
+UnBundle 'nathanaelkane/vim-indent-guides'
+
+
+
+
+Bundle '907th/vim-auto-save'
 Bundle 'chriskempson/base16-vim'
-" Bundle 'Yggdroot/hiPairs'
 Bundle 'svermeulen/vim-easyclip'
 Bundle 'bash-support.vim'
 Bundle 'wesQ3/vim-windowswap'
@@ -9,12 +19,6 @@ Bundle 'rhysd/vim-clang-format'
 Bundle 'tmux-plugins/vim-tmux-focus-events'
 Bundle 'blueyed/vim-diminactive'
 Bundle 'tpope/vim-unimpaired'
-
-"Bundle 'Shougo/vimshell.vim'
-
-
-UnBundle 'gko/vim-coloresque'
-UnBundle 'xolox/vim-colorscheme-switcher'
-UnBundle 'terryma/vim-expand-region'
-UnBundle 'scrooloose/syntastic'
-UnBundle 'nathanaelkane/vim-indent-guides'
+Bundle 'plasticboy/vim-markdown'
+" Bundle 'Shougo/vimshell.vim'
+" Bundle 'Yggdroot/hiPairs'
