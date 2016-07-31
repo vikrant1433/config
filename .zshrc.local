@@ -166,10 +166,12 @@ alias 'ubuntu'='lsb_release -d'
 alias 'sshkey'='cat ~/.ssh/id_rsa.pub | xclip -selection clipboard && echo "ssh public key copied to clipboard."'
 # ssh fokat
 alias 'fokat'='ssh fokat'
+# ssh nivia lab pc
 alias 'niks'='ssh niks'
-# ssh 
 # ssh room
 alias 'room'='ssh room'
+# ssh lab
+alias 'lab'='ssh dearu'
 # ssh mars
 alias 'mars'='ssh -t mars "zsh"'
 # ssh bt3
