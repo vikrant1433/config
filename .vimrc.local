@@ -60,6 +60,8 @@
 " MAPPINGS {
     " go to normal mode and keep the cursor at its original position
     inoremap jk <esc>l
+    " open vim help for text under the cursor
+    nnoremap K :help <C-r><C-w><CR>
 
     " Shortcut to rapidly toggle set list
     nnoremap <leader>l :set list!<CR>
@@ -96,9 +98,9 @@
         nnoremap } }zz
         nnoremap { {zz
     " put newline above the current line
-    nnoremap gO O<ESC>
+    "nnoremap gO O<ESC>
     " g<C-O> put newline below the current line
-    nnoremap g<C-O> o<ESC>
+    "nnoremap g<C-O> o<ESC>
 
     " easier moving of code blocks
     " better indentation
@@ -110,7 +112,7 @@
     " go to start of line
     nnoremap H 0
     " go to end of line
-    nnoremap L g_
+    "nnoremap L g_
     " open filename under to cursor in a vertical split
     nnoremap gf :vertical wincmd f<CR>
 
@@ -134,7 +136,9 @@
     " }
 
     " Tabularize {
+    " trigger the :Tabularize command whenever you type | symbol
         inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+
         function! s:align()
           let p = '^\s*|\s.*\s|\s*$'
           if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
@@ -164,4 +168,20 @@
             set undodir=~/.undodir/
         endif
     " }
+
+    " CLANG-FORMAT PLUGIN {
+        " When the value is 1, a current buffer is automatically formatted on
+        " saving the buffer. Formatting is executed on BufWritePre event.
+        let g:clang_format#auto_format_on_insert_leave=1
+
+        " When the value is 1, a current buffer is automatically formatted on
+        " saving the buffer. Formatting is executed on BufWritePre event.
+         " let g:clang_format#auto_format_on_insert_leave=1
+    " }
+
+    " AUTO-SAVE PLUGIN {
+        " enable auto_save at startup
+        let g:auto_save = 1
+    " }
+
 " }
