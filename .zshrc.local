@@ -57,6 +57,7 @@ fi
 alias 'axel'='axel -avn'
 alias ':Q'=exit
 alias ':q'=exit
+alias 'g++'='g++ -std=c++1y'
 # aliases for Tmux
 alias 't'='tmux -u -2'
 #alias tmux='tmux -u -2'
