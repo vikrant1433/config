@@ -1,4 +1,3 @@
-
 # make sure that if a program wants you to edit 
 # text, that vim is going to be there for you
 export EDITOR="vim"
@@ -165,31 +164,31 @@ alias 'ubuntu'='lsb_release -d'
 # copy ssh public key to system clipboard
 alias 'sshkey'='cat ~/.ssh/id_rsa.pub | xclip -selection clipboard && echo "ssh public key copied to clipboard."'
 # ssh fokat
-alias 'fokat'='ssh fokat'
+alias 'fokat'='ssh -X fokat'
 # ssh nivia lab pc
-alias 'niks'='ssh niks'
+alias 'niks'='ssh -X niks'
 # ssh room
-alias 'room'='ssh room'
+alias 'room'='ssh -X room'
 # ssh lab
-alias 'lab'='ssh dearu'
+alias 'lab'='ssh -X dearu'
 # ssh mars
-alias 'mars'='ssh -t mars "zsh"'
+alias 'mars'='ssh -X -t mars "zsh"'
 # ssh bt3
-alias 'bt3'='ssh -t bt3 "zsh"'
+alias 'bt3'='ssh -X -t bt3 "zsh"'
 # ssh bt1
-alias 'bt1'='ssh -t bt1 "zsh"'
+alias 'bt1'='ssh -X -t bt1 "zsh"'
 # ssh vega
-alias 'vega'='ssh -t vega "zsh"'
+alias 'vega'='ssh -X -t vega "zsh"'
 # ssh juno
-alias 'juno'='ssh -t juno "zsh"'
+alias 'juno'='ssh -X -t juno "zsh"'
 # ssh safestreet
-alias 'safestreet'='ssh -t safestreet "zsh"'
+alias 'safestreet'='ssh -X -t safestreet "zsh"'
 # ssh vacha
-alias 'vacha'='ssh -t vacha "zsh"'
+alias 'vacha'='ssh -X -t vacha "zsh"'
 # ssh vacha-root
-alias 'vacha-root'='ssh -t vacha-root "zsh"'
+alias 'vacha-root'='ssh -X -t vacha-root "zsh"'
 # ssh lappi
-alias 'lappi'='ssh -t lappi "zsh"'
+alias 'lappi'='ssh -X -t lappi "zsh"'
 # END SSH ALIAS
 # my exports
 export IMGUR_API_ID="d5de70e3a4036a6"
