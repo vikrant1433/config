@@ -7,7 +7,7 @@
     "endif
     syntax enable
     if has('gui_running')
-        colorscheme codeschool
+        colorscheme jellybeans
         set guifont=Consolas\ 15
     else
         "colorscheme sol
@@ -16,8 +16,8 @@
         "colorscheme github
         "colorscheme PaperColor
         colorscheme hybrid_material
-        let g:enable_bold_font = 1
     endif
+    let g:enable_bold_font = 1
     "if &diff
         "colorscheme evening
     "endif
