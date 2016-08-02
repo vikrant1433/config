@@ -7,7 +7,7 @@
     "endif
     syntax enable
     if has('gui_running')
-        colorscheme codeschool
+        colorscheme hybrid_material
         set guifont=Consolas\ 15
     else
         "colorscheme sol
@@ -181,7 +181,7 @@
 
     " AUTO-SAVE PLUGIN {
         " enable auto_save at startup
-        let g:auto_save = 1
+        " let g:auto_save = 1
     " }
 
 " }
