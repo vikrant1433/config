@@ -37,7 +37,8 @@
     set linebreak
     " Use the same symbols as TextMate for tabstops and EOLs
     " show tabs and newline characters
-    set listchars=tab:▸\ ,trail:•,extends:#,nbsp:.,eol:¬,space:. " Highlight problematic whitespace
+    " Highlight problematic whitespace
+    set listchars=tab:▸\ ,trail:•,extends:#,nbsp:.,eol:¬,space:.
     set nospell " disable spell check
     hi clear SpellBad
     set nolist
@@ -91,6 +92,7 @@
     vnoremap <S-down> :m +1<CR>
     " move the current line up
     vnoremap <S-up> :m -2<CR>
+
 
     " for auto centering
         nnoremap G Gzz
@@ -183,6 +185,10 @@
     " AUTO-SAVE PLUGIN {
         " enable auto_save at startup
         " let g:auto_save = 1
+    " }
+    " LINEDIFF PLUGIN {
+        vmap <leader>ld :Linediff
+        " nmap <leader>ld :Linediff
     " }
 
 " }
