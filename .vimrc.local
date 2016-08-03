@@ -190,5 +190,13 @@
         vmap <leader>ld :Linediff
         " nmap <leader>ld :Linediff
     " }
+    " NERDTREE PLUGIN {
+    " open NERDtree automatically when vim starts up if no files were
+    " specified
+        autocmd StdinReadPre * let s:std_in=1
+        autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+    " close vim if only window left open is a NERDtree
+        autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+    " }
 
 " }
