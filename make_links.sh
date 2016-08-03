@@ -32,6 +32,7 @@ ln -fs ${SCRIPT_ABS_PATH}/.oh-my-zsh/custom/themes/dst.zsh-theme ~/.oh-my-zsh/cu
 ln -sf ${SCRIPT_ABS_PATH}/zsh-syntax-highlighting ~/.oh-my-zsh/plugins/
 
 # VIM
+ln -sf ${SCRIPT_ABS_PATH}/.vimrc.before.local ~/.vimrc.before.local 
 ln -sf ${SCRIPT_ABS_PATH}/.vimrc.local ~/.vimrc.local
 ln -sf ${SCRIPT_ABS_PATH}/.vimrc.bundles.local ~/.vimrc.bundles.local
 
