@@ -156,6 +156,10 @@ alias 'rl'='readlink -f '
 alias 'drs'='python manage.py runserver '
 # END DJANGO ALIAS
 
+# POSTGRESQL ALIAS
+alias 'startpost'='sudo service postgresql start'
+alias 'restartpost'='sudo service postgresql restart'
+alias 'stoppost'='sudo service postgresql stop'
 
 # my exports
 ###################################################
@@ -189,6 +193,8 @@ alias 'vacha'='ssh -X -t vacha "zsh"'
 alias 'vacha-root'='ssh -X -t vacha-root "zsh"'
 # ssh lappi
 alias 'lappi'='ssh -X -t lappi "zsh"'
+# ssh testbed
+alias 'testbed'='ssh -X -t testbed "zsh"'
 # END SSH ALIAS
 # my exports
 export IMGUR_API_ID="d5de70e3a4036a6"
