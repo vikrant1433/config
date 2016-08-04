@@ -196,6 +196,10 @@ alias 'lappi'='ssh -X -t lappi "zsh"'
 # ssh testbed
 alias 'testbed'='ssh -X -t testbed "zsh"'
 # END SSH ALIAS
+# functions
+drsg() {
+    python manage.py runserver 0.0.0.0:$1
+}
 # my exports
 export IMGUR_API_ID="d5de70e3a4036a6"
 export IMGUR_API_SECRET="f830fe6c79f063c88370689ca77f6af1906b0cfd"
