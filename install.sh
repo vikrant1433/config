@@ -89,3 +89,5 @@ else
     echo "oh-my-zsh already installed"
 fi
 
+# vim plugin install
+bash vim_plugin_install.sh
