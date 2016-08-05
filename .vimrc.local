@@ -16,7 +16,6 @@
         "colorscheme github
         "colorscheme PaperColor
         colorscheme hybrid_material
-        let g:enable_bold_font = 1
     endif
     let g:enable_bold_font = 1
     "if &diff
@@ -216,11 +215,45 @@
 
         " open NERDtree automatically when vim starts up if no files were
         " specified
-        autocmd StdinReadPre * let s:std_in=1
-        autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+        " autocmd StdinReadPre * let s:std_in=1
+        " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
         " close vim if only window left open is a NERDtree
         autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
     " }
+    
+    " FUGITIVE GIT BINDINGS {
+        nnoremap <space>ga :Git add %:p<CR><CR>
+        nnoremap <space>gs :Gstatus<CR>
+        nnoremap <space>gc :Gcommit -v -q<CR>
+        nnoremap <space>gt :Gcommit -v -q %:p<CR>
+        nnoremap <space>gd :Gdiff<CR>
+        " nnoremap <space>ge :Gedit<CR>
+        " nnoremap <space>gr :Gread<CR>
+        " nnoremap <space>gw :Gwrite<CR><CR>
+        " nnoremap <space>gl :silent! Glog<CR>:bot copen<CR>
+        " nnoremap <space>gp :Ggrep<Space>
+        " nnoremap <space>gm :Gmove<Space>
+        " nnoremap <space>gb :Git branch<Space>
+        " nnoremap <space>go :Git checkout<Space>
+        " nnoremap <space>gps :Dispatch! git push<CR>
+        " nnoremap <space>gpl :Dispatch! git pull<CR>
+    " }
+
+    " indentlines {
+        
+        let g:indentLine_enabled = 0
+        " Vim
+        let g:indentLine_color_term = 239
+
+        "GVim
+        let g:indentLine_color_gui = '#A4E57E'
+
+        " none X terminal
+        let g:indentLine_color_tty_light = 7 " (default: 4)
+        let g:indentLine_color_dark = 1 " (default: 2)
+        let g:indentLine_char = '│'
+    " }
+
 
 " }
