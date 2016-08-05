@@ -255,5 +255,11 @@
         let g:indentLine_char = '│'
     " }
 
+    " vseq plugin {
+
+    " padding by white space becomes right side of number
+       let g:vseq#padding_right=1
+
+    " }
 
 " }
