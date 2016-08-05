@@ -1,2 +1,2 @@
-0,29 * * * * /usr/bin/curl --silent --data "uname=153050031&passwd=123456@" https://internet.iitb.ac.in/index.php >/dev/null 2>&1
-@reboot sleep 60 && /usr/bin/curl --silent --data "uname=153050031&passwd=123456@" https://internet.iitb.ac.in/index.php >/dev/null 2>&1
+0,29 * * * * curl --silent --data "uname=153050031&passwd=123456@" https://internet.iitb.ac.in/index.php 
+@reboot sleep 60 && /usr/bin/curl --silent --data "uname=153050031&passwd=123456@" https://internet.iitb.ac.in/index.php 
