@@ -7,7 +7,6 @@ UnBundle 'nathanaelkane/vim-indent-guides'
 " UnBundle 'lervag/vimtex'
 
 
-
 Bundle '907th/vim-auto-save'
 Bundle 'chriskempson/base16-vim'
 Bundle 'svermeulen/vim-easyclip'
@@ -22,6 +21,10 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'AndrewRadev/linediff.vim'
 Bundle 'Xuyuanp/nerdtree-git-plugin'
 Bundle 'Konfekt/FastFold'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'Yggdroot/indentLine'
+
+
 " Bundle 'LaTeX-Box-Team/LaTeX-Box'
 " Bundle 'lervag/vimtex'
 " Bundle 'Shougo/vimshell.vim'
