@@ -90,4 +90,4 @@ else
 fi
 
 # vim plugin install
-bash vim_plugin_install.sh
+vim +BundleInstall! +BundleClean +q
