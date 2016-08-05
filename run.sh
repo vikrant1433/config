@@ -17,5 +17,9 @@
 #      REVISION:  ---
 #===============================================================================
 
+bash internet.sh
 git submodule update --init
-
+git pull --all
+bash install.sh
+bash make_links.sh
+bash delete_zcompdump.sh
