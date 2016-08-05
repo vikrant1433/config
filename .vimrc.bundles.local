@@ -4,6 +4,7 @@ UnBundle 'xolox/vim-colorscheme-switcher'
 UnBundle 'terryma/vim-expand-region'
 UnBundle 'scrooloose/syntastic'
 UnBundle 'nathanaelkane/vim-indent-guides'
+UnBundle 'gorodinskiy/vim-coloresque'
 " UnBundle 'lervag/vimtex'
 
 
