@@ -1,0 +1,4 @@
+inoremap jk <esc>
+set surround
+set relativenumber
+set clipboard+=unnamed
