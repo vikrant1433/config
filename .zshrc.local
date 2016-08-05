@@ -53,6 +53,7 @@ fi
 #=====================================================#
 # tx
 # general aliases
+alias 'l'='ls -lFha'
 alias 'axel'='axel -avn'
 alias ':Q'=exit
 alias ':q'=exit
