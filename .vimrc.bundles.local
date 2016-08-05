@@ -24,6 +24,7 @@ Bundle 'Konfekt/FastFold'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'Yggdroot/indentLine'
 Bundle 'dalance/vseq.vim'
+Bundle 'vim-scripts/marvim'
 
 
 " Bundle 'LaTeX-Box-Team/LaTeX-Box'
