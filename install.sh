@@ -64,6 +64,22 @@ if [ $(dpkg-query -W -f='${Status}' tmux 3>/dev/null | grep -c "ok installed") -
 else
     echo "tmux already installed"
 fi
+
+#-------------------------------------------------------------------------------
+# install etckeeper to put /etc/ directory under version control
+#-------------------------------------------------------------------------------
+if [ $(dpkg-query -W -f='${Status}' etckeeper 3>/dev/null | grep -c "ok installed") -eq 0 ]; then
+    # exit if not a sudo user
+    if [ $(sudo -v | grep -c "sudo") -gt 0 ]; then
+        echo "don't have sudo rights exiting..."
+        exit
+    fi
+    echo "installing etckeeper..."
+    sudo apt-get install etckeeper -y
+else
+    echo "etckeeper already installed"
+fi
+
 ############################################################################
 # VIM-SPF13
 #
