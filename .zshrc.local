@@ -48,11 +48,11 @@ if [ -d ~/Dropbox ]; then
     # open ~/Dropbox/notes/awk-notes.md file for editing in vim
     alias 'awk-notes'=vim\ ~/Dropbox/notes/awk-notes.md
     # open ~/config/ directory 
-    alias 'config'='cd ~/config/'
 fi
 #=====================================================#
 # tx
 # general aliases
+alias 'config'='cd ~/config/'
 alias 'sudo'='sudo '
 alias 'l'='ls -lFha'
 alias 'axel'='axel -avn'
