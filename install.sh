@@ -79,6 +79,20 @@ if [ $(dpkg-query -W -f='${Status}' etckeeper 3>/dev/null | grep -c "ok installe
 else
     echo "etckeeper already installed"
 fi
+#-------------------------------------------------------------------------------
+# install clang-format
+#-------------------------------------------------------------------------------
+if [ $(dpkg-query -W -f='${Status}' clang-format 3>/dev/null | grep -c "ok installed") -eq 0 ]; then
+    # exit if not a sudo user
+    if [ $(sudo -v | grep -c "sudo") -gt 0 ]; then
+        echo "don't have sudo rights exiting..."
+        exit
+    fi
+    echo "installing clang-format..."
+    sudo apt-get install clang-format -y
+else
+    echo "clang-format already installed"
+fi
 
 ############################################################################
 # VIM-SPF13
