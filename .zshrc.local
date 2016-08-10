@@ -4,6 +4,8 @@ export EDITOR="vim"
 export USE_EDITOR=$EDITOR
 export VISUAL=$EDITOR
 
+export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
+export LESS=' -R '
 #export PATH="/home/vikrant/software/arcanist/arcanist/bin:$PATH"
 
 # LS_COLORS
@@ -69,6 +71,7 @@ alias 'tkill'='tmux kill-session -t'
 
 # nginx alias
 alias 'ngr'='sudo service nginx restart'
+alias 'ngt'='sudo nginx -t'
 # ping test alias
 alias 'pt'='ping test'
 # vim alias
