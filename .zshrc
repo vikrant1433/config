@@ -56,7 +56,7 @@ ZSH_THEME="dst"
 # plugins=(git)
 # tx
 # plugins
-plugins=(copydir copyfile command-not-found sudo git z themes ubuntu zsh-syntax-highlighting common-aliases)
+plugins=(copydir copyfile command-not-found sudo git z themes ubuntu zsh-syntax-highlighting common-aliases arcanist)
 # txend
 
 # User configuration
