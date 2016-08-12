@@ -37,8 +37,8 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # change directory aliases
-# change directory to ~/Dropbox/notes
 if [ -d ~/Dropbox ]; then
+    # change directory to ~/Dropbox/notes
     alias 'notes'='cd ~/Dropbox/notes/'
     alias 'vim-notes'='vim ~/Dropbox/notes/vim-notes.md'
     alias 'git-notes'='vim ~/Dropbox/notes/git-notes.md'
@@ -151,7 +151,8 @@ imgurl()
 # scp with recursive flag
 alias 'scp'='scp -r'
 # rsync -arvu
-alias 'rs'='rsync -arvu'
+alias 'rs'='rsync -aruP'
+alias 'rsv'='rsync -aruv'
 # find directory
 alias 'lsg'='ls | grep -i '
 # find directory also includes hidden directory
