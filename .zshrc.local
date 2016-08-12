@@ -8,6 +8,9 @@ export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
 #export PATH="/home/vikrant/software/arcanist/arcanist/bin:$PATH"
 
+# added by Anaconda3 4.1.1 installer
+# export PATH="/home/vikrant/anaconda3/bin:$PATH"
+
 # LS_COLORS
 if [ -f $HOME/.dircolors ]; then
     eval $(dircolors -b $HOME/.dircolors)
@@ -155,12 +158,20 @@ alias 'lsg'='ls | grep -i '
 alias 'lg'='l | grep'
 # echo the full path of a file name
 alias 'rl'='readlink -f '
+# gnome-open
+alias 'gopen'='gnome-open'
 
 # DJANGO ALIAS
 # runserver
 alias 'drs'='python manage.py runserver '
+alias 'dmmig'='python manage.py makemigrations '
+alias 'dmig'='python manage.py migrate '
+alias 'dsmig'='python manage.py sqlmigrate '
+alias 'dshell'='python manage.py shell_plus '
+alias 'drsp'='python manage.py runserver_plus '
 # END DJANGO ALIAS
-
+# pip alias
+alias 'pi'='pip install '
 # POSTGRESQL ALIAS
 alias 'startpost'='sudo service postgresql start'
 alias 'restartpost'='sudo service postgresql restart'
