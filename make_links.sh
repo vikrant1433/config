@@ -55,4 +55,8 @@ ln -sf ${SCRIPT_ABS_PATH}/.gitconfig ~/.gitconfig
 ln -sf ${SCRIPT_ABS_PATH}/.ideavimrc ~/.ideavimrc
 
 # BASE16-GNOME-TERMINAL
-ln -s -t ~/.config/ ${SCRIPT_ABS_PATH}/base16-gnome-terminal
+ln -sf -t ~/.config/ ${SCRIPT_ABS_PATH}/base16-gnome-terminal
+
+# delete  Bundle 'tpope/vim-markdown' from ~/.vimrc.bundles
+# as it is conflicting with plasticboy vim-markdown
+sed -i "/Bundle 'tpope\/vim-markdown'/d" ~/.vimrc.bundles
