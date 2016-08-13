@@ -49,7 +49,7 @@
 " }
 
 " Environment {
-
+    set gdefault
     set wildignorecase
     set ignorecase " Make search case insensitive
     set smartcase
@@ -62,7 +62,7 @@
     " copy all lines in the file
     nmap <space>y :%y<CR>
     " go to normal mode and keep the cursor at its original position
-    inoremap jk <esc>l
+    inoremap jk <Esc>`^
     " open vim help for text under the cursor
     nnoremap K :help <C-r><C-w><CR>
 
@@ -255,11 +255,18 @@
         let g:indentLine_char = '│'
     " }
 
-    " vseq plugin {
+    " VSEQ PLUGIN {
 
     " padding by white space becomes right side of number
        let g:vseq#padding_right=1
 
+    " }
+
+    " yankstack {
+     " load yankstack without the default key mappings
+        " let g:yankstack_map_keys = 0
+        " nmap \p <Plug>yankstack_substitute_older_paste
+        " nmap \P <Plug>yankstack_substitute_newer_paste
     " }
 
 " }
