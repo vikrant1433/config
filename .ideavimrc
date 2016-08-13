@@ -1,4 +1,5 @@
 " my settings
+let mapleader = ","
 
 " inoremap jk <esc>
 set surround
@@ -103,6 +104,8 @@ nnoremap <space>t :action FileStructurePopup<cr>
 nnoremap <space>T :action GotoSymbol<cr>
 nnoremap <space>a :action GotoAction<cr>
 nnoremap <space>b :action ToggleLineBreakpoint<cr>
+nnoremap <leader>c<space> :action CommentByLineComment<cr>
+" vnoremap <leader>c<space> :action CommentByLineComment<cr>
 
 " code navigation
 nnoremap <space>] :action GotoImplementation<cr>

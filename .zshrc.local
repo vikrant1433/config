@@ -8,9 +8,6 @@ export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
 #export PATH="/home/vikrant/software/arcanist/arcanist/bin:$PATH"
 
-# added by Anaconda3 4.1.1 installer
-# export PATH="/home/vikrant/anaconda3/bin:$PATH"
-
 # LS_COLORS
 if [ -f $HOME/.dircolors ]; then
     eval $(dircolors -b $HOME/.dircolors)

@@ -103,6 +103,9 @@ fi
 if [ ! -d ~/.spf13-vim-3 ]; then
     echo "installing vim-spf13"
     curl http://j.mp/spf13-vim3 -L -o - | sh
+    # delete  Bundle 'tpope/vim-markdown' from ~/.vimrc.bundles
+    # as it is conflicting with plasticboy vim-markdown
+    sed -i "/Bundle 'tpope\/vim-markdown'/d" ~/.vimrc.bundles
 else
     echo "vim-spf13 already installed"
 fi

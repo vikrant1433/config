@@ -52,4 +52,11 @@ ln -sf ${SCRIPT_ABS_PATH}/vim-instant-markdown/after/ftplugin/markdown/instant-m
 ln -sf ${SCRIPT_ABS_PATH}/.gitconfig ~/.gitconfig
 
 # IDEAVIM
-ln -sf ${SCRIPT_ABS_PATH}/config/.ideavimrc ~/.ideavimrc
+ln -sf ${SCRIPT_ABS_PATH}/.ideavimrc ~/.ideavimrc
+
+# BASE16-GNOME-TERMINAL
+ln -sf -t ~/.config/ ${SCRIPT_ABS_PATH}/base16-gnome-terminal
+
+# delete  Bundle 'tpope/vim-markdown' from ~/.vimrc.bundles
+# as it is conflicting with plasticboy vim-markdown
+sed -i "/Bundle 'tpope\/vim-markdown'/d" ~/.vimrc.bundles
