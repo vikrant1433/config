@@ -8,9 +8,6 @@ export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
 #export PATH="/home/vikrant/software/arcanist/arcanist/bin:$PATH"
 
-# added by Anaconda3 4.1.1 installer
-# export PATH="/home/vikrant/anaconda3/bin:$PATH"
-
 # LS_COLORS
 if [ -f $HOME/.dircolors ]; then
     eval $(dircolors -b $HOME/.dircolors)
@@ -161,15 +158,23 @@ alias 'lg'='l | grep'
 alias 'rl'='readlink -f '
 # gnome-open
 alias 'gopen'='gnome-open'
+# virtualenvwrapper aliases
+alias 'wn'='workon '
+alias 'svp'='setvirtualenvproject '
+alias 'mkv'='mkvirtualenv '
+alias 'mkv'='mkvirtualenv '
+alias 'rmv'='rmvirtualenv'
 
 # DJANGO ALIAS
 # runserver
 alias 'drs'='python manage.py runserver '
+alias 'dt'='python manage.py test '
 alias 'dmmig'='python manage.py makemigrations '
 alias 'dmig'='python manage.py migrate '
 alias 'dsmig'='python manage.py sqlmigrate '
 alias 'dshell'='python manage.py shell_plus '
 alias 'drsp'='python manage.py runserver_plus '
+alias 'dcs'='python manage.py collectstatic '
 # END DJANGO ALIAS
 # pip alias
 alias 'pi'='pip install '

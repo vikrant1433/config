@@ -49,7 +49,7 @@
 " }
 
 " Environment {
-
+    set gdefault
     set wildignorecase
     set ignorecase " Make search case insensitive
     set smartcase
