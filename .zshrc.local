@@ -88,6 +88,10 @@ alias 'gd'='git difftool'
 alias 'gau'='git add -u'
 # git commit and push
 alias 'gcp'='gc && ggpush'
+alias 'gini'='git init'
+# program runs in background and redirect output/errors to /dev/null
+alias -g 'bg'=' > /dev/null 2>&1 &'
+
 
 alias 'glg'='glg1'
 # get the ip address of the machine
@@ -166,7 +170,14 @@ alias 'rmv'='rmvirtualenv'
 
 # DJANGO ALIAS
 # runserver
-alias 'drs'='python manage.py runserver '
+# alias 'drs'='python manage.py runserver '
+drs(){
+    if [ "$#" -eq 1 ]; then
+        python manage.py runserver "$1"
+    else
+        python manage.py runserver
+    fi
+}
 alias 'dt'='python manage.py test '
 alias 'dmmig'='python manage.py makemigrations '
 alias 'dmig'='python manage.py migrate '
@@ -174,6 +185,10 @@ alias 'dsmig'='python manage.py sqlmigrate '
 alias 'dshell'='python manage.py shell_plus '
 alias 'drsp'='python manage.py runserver_plus '
 alias 'dcs'='python manage.py collectstatic '
+alias 'dsa'='python manage.py startapp '
+drsg() {
+    python manage.py runserver 0.0.0.0:$1
+}
 # END DJANGO ALIAS
 # pip alias
 alias 'pi'='pip install '
@@ -218,8 +233,9 @@ alias 'lappi'='ssh -X -t lappi "zsh"'
 alias 'testbed'='ssh -X -t testbed "zsh"'
 # END SSH ALIAS
 # functions
-drsg() {
-    python manage.py runserver 0.0.0.0:$1
+em()
+{
+    emacsclient.emacs24 "$@" &
 }
 # my exports
 export IMGUR_API_ID="d5de70e3a4036a6"
