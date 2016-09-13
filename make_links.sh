@@ -17,6 +17,7 @@
 #      REVISION:  ---
 #===============================================================================
 
+# by using the SCRIPT_ABS_PATH variable you can run the script from any directory
 cd "`dirname \"$0\"`"
 SCRIPT_ABS_PATH=${PWD}
 # ZSH
@@ -60,3 +61,9 @@ ln -sf -t ~/.config/ ${SCRIPT_ABS_PATH}/base16-gnome-terminal
 # delete  Bundle 'tpope/vim-markdown' from ~/.vimrc.bundles
 # as it is conflicting with plasticboy vim-markdown
 sed -i "/Bundle 'tpope\/vim-markdown'/d" ~/.vimrc.bundles
+
+
+# SPACEMACS
+ln -sf ${SCRIPT_ABS_PATH}/.spacemacs ~/.spacemacs
+
+
