@@ -58,11 +58,215 @@
     set shell=/usr/bin/zsh "make zsh as default shell for vim
 " }
 
-" mappings { 
+" MAPPINGS {
+    " copy all lines in the file
+    nmap <space>y :%y<CR>
+    " go to normal mode and keep the cursor at its original position
+    inoremap jk <Esc>`^
+    " open vim help for text under the cursor
+    nnoremap K :help <C-r><C-w><CR>
+
+    " Shortcut to rapidly toggle set list
+    nnoremap <leader>l :set list!<CR>
+
+    " open ~/.vimrc.local for in vertical split for editing
+    nnoremap <silent> <leader>ev :vsplit ~/.vimrc.local<CR>
+    nnoremap <silent> <leader>eb :vsplit ~/.vimrc.bundles.local<CR>
+    nnoremap <silent> <leader>en :vsplit ~/Dropbox/notes/vim-notes.md<CR>
+    nnoremap <silent> <leader>sv :source $MYVIMRC<CR>
+
+    " inserting date with F5
+    nnoremap <F5> "=strftime("%d-%b-%Y")<CR>P
+    inoremap <F5> <C-R>=strftime("%d-%b-%Y")<CR>
+
+    " <Ctrl-l> redraws the screen and removes any search highlighting.
+    nnoremap <silent> <C-l> :nohl<CR><C-l>
+
+    nnoremap <right> <Nop>
+    nnoremap <left> <Nop>
+
+    " move the current line down
+    nnoremap <S-down> :m +1<CR>
+    " move the current line up
+    nnoremap <S-up> :m -2<CR>
+    " move the current line up
+    vnoremap <S-down> :m +1<CR>
+    " move the current line up
+    vnoremap <S-up> :m -2<CR>
+
+
+    " for auto centering
+        nnoremap G Gzz
+        nnoremap n nzz
+        nnoremap N Nzz
+        nnoremap } }zz
+        nnoremap { {zz
+    " put newline above the current line
+    "nnoremap gO O<ESC>
+    " g<C-O> put newline below the current line
+    "nnoremap g<C-O> o<ESC>
+
+    " easier moving of code blocks
+    " better indentation
+    vnoremap > >gv
+
+    " goto end of file and center the screen and go to insert mode
+    nnoremap <C-g> Gzzo
+    
+    " go to start of line
+    nnoremap H 0
+    " go to end of line
+    "nnoremap L g_
+    " open filename under to cursor in a vertical split
+    nnoremap gf :vertical wincmd f<CR>
+
+    nnoremap gm m
+
+    " EasyClip plugin {
+        nmap M <Plug>MoveMotionEndOfLinePlug
+        let g:EasyClipUseSubstituteDefaults=1
+        let g:EasyClipShareYanks=1
+        let g:EasyClipUsePasteToggleDefaults = 0
+        nmap <c-f> <plug>EasyClipSwapPasteForward
+        nmap <c-d> <plug>EasyClipSwapPasteBackwards
+    " }
+
+    " AIRLINE_THEME {
+        let g:airline_theme='jellybeans'
+    " }
+
+    " BASH-SUPPORT {
+        let g:BASH_MapLeader = '\'
+    " }
+
+    " Tabularize {
+    " trigger the :Tabularize command whenever you type | symbol
+        inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+
+        function! s:align()
+          let p = '^\s*|\s.*\s|\s*$'
+          if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+            let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+            let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+            Tabularize/|/l1
+            normal! 0
+            call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+          endif
+        endfunction
+    " }
+
+    " VIM-INSTANT-MARKDOWN PLUGIN {
+
+        " refesh the changes only when no keys have been pressed for a while or a
+        " while after we leave insert mode or we save the file being edited
+        let g:instant_markdown_slow = 0
+        " vim-intant-markdown will not automatically launch the browser preview window
+        " when we open a markdown file. To manually trigger preview the command is
+        " :InstantMarkdownPreview
+        let g:instant_markdown_autostart = 0
+
+    " }
+
+    " UNDOTREE PLUGIN {
+        if has("persistent_undo")
+            set undodir=~/.undodir/
+        endif
+    " }
+
+    " CLANG-FORMAT PLUGIN {
+        " When the value is 1, a current buffer is automatically formatted on
+        " saving the buffer. Formatting is executed on BufWritePre event.
+        let g:clang_format#auto_format_on_insert_leave=1
+
+        " When the value is 1, a current buffer is automatically formatted on
+        " saving the buffer. Formatting is executed on BufWritePre event.
+         " let g:clang_format#auto_format_on_insert_leave=1
+    " }
+
+    " AUTO-SAVE PLUGIN {
+        " enable auto_save at startup
+        " let g:auto_save = 1
+    " }
+    " LINEDIFF PLUGIN {
+        vmap <leader>ld :Linediff
+        " nmap <leader>ld :Linediff
+    " }
+    " NERDCOMMENTER {
+        " Add spaces after comment delimiters by default
+        let g:NERDSpaceDelims = 1
+
+        " Use compact syntax for prettified multi-line comments
+        let g:NERDCompactSexyComs = 1
+
+        " Align line-wise comment delimiters flush left instead of following code indentation
+        let g:NERDDefaultAlign = 'left'
+
+        " Set a language to use its alternate delimiters by default
+        "let g:NERDAltDelims_java = 1
+
+        " Add your own custom formats or override the defaults
+        "let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+
+        " Allow commenting and inverting empty lines (useful when commenting a region)
+        "let g:NERDCommentEmptyLines = 1
+
+        " Enable trimming of trailing whitespace when uncommenting
+        let g:NERDTrimTrailingWhitespace = 1
+
+        " open NERDtree automatically when vim starts up if no files were
+        " specified
+        " autocmd StdinReadPre * let s:std_in=1
+        " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+        " close vim if only window left open is a NERDtree
+        autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+    " }
+    
+    " FUGITIVE GIT BINDINGS {
+        nnoremap <space>ga :Git add %:p<CR><CR>
+        nnoremap <space>gs :Gstatus<CR>
+        nnoremap <space>gc :Gcommit -v -q<CR>
+        nnoremap <space>gt :Gcommit -v -q %:p<CR>
+        nnoremap <space>gd :Gdiff<CR>
+        " nnoremap <space>ge :Gedit<CR>
+        " nnoremap <space>gr :Gread<CR>
+        " nnoremap <space>gw :Gwrite<CR><CR>
+        " nnoremap <space>gl :silent! Glog<CR>:bot copen<CR>
+        " nnoremap <space>gp :Ggrep<Space>
+        " nnoremap <space>gm :Gmove<Space>
+        " nnoremap <space>gb :Git branch<Space>
+        " nnoremap <space>go :Git checkout<Space>
+        " nnoremap <space>gps :Dispatch! git push<CR>
+        " nnoremap <space>gpl :Dispatch! git pull<CR>
+    " }
+
+    " indentlines {
+        
+        let g:indentLine_enabled = 0
+        " Vim
+        let g:indentLine_color_term = 239
+
+        "GVim
+        let g:indentLine_color_gui = '#A4E57E'
+
+        " none X terminal
+        let g:indentLine_color_tty_light = 7 " (default: 4)
+        let g:indentLine_color_dark = 1 " (default: 2)
+        let g:indentLine_char = '│'
+    " }
+
+    " VSEQ PLUGIN {
+
+    " padding by white space becomes right side of number
+       let g:vseq#padding_right=1
+
+    " }
+
+    " yankstack {
+     " load yankstack without the default key mappings
         " let g:yankstack_map_keys = 0
         " nmap \p <Plug>yankstack_substitute_older_paste
         " nmap \P <Plug>yankstack_substitute_newer_paste
-    unmap <C-e>
     " }
 
 " }
