@@ -23,25 +23,44 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     auto-completion
-     ;; better-defaults
+     ;; language layers
+     html
+     (c-c++ :variables c-c++-enable-clang-support t)
      emacs-lisp
-     git
+     javascript
+     java
+     ipython-notebook
      markdown
+     latex
+     python
+     php
+     shell-scripts
+     vimscript
+
+     auto-completion
+     better-defaults
+     git
+     gtags
      org
+     ranger
+     pandoc
      themes-megapack
+     version-control
+     ;; vinegar
+     unimpaired
+     ;; ycmd
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
      ;; spell-checking
      ;; syntax-checking
-     ;; version-control
+     version-control
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(ox-twbs)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -84,7 +103,7 @@ values."
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner 'official
+   dotspacemacs-startup-banner nil
    ;; List of items to show in the startup buffer. If nil it is disabled.
    ;; Possible values are: `recents' `bookmarks' `projects'.
    ;; (default '(recents projects))
@@ -98,12 +117,14 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(spacemacs-dark
-                         spacemacs-light
-                         solarized-light
-                         solarized-dark
-                         leuven
                          monokai
-                         zenburn)
+                         solarized-dark
+                         solarized-light
+                         spacemacs-light
+                         zenburn
+                         wombat
+                         leuven
+                         )
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
@@ -242,6 +263,11 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  ;; (set-variable 'ycmd-server-command '("python" "~/Downloads/softwares/ycmd/"))
+  (setq-default
+
+   ;; Miscellaneous
+   vc-follow-symlinks t)
   )
 
 (defun dotspacemacs/user-config ()
@@ -252,7 +278,13 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   ;; Modeline separators
-  
+  ;; Spaceline
+  ;; (setq powerline-default-separator 'arrow
+  ;;       spaceline-buffer-encoding-abbrev-p nil
+  ;;       spaceline-version-control-p nil)
+
+  ;; disable highlighting trailing-whitespace
+  (setq-default spacemacs-show-trailing-whitespace nil)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

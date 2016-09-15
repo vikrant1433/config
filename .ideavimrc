@@ -17,7 +17,7 @@ set ignorecase smartcase
 " UI
 set showmode
 set scrolloff=3
-set relativenumber
+" set relativenumber
 
 
 
@@ -124,6 +124,8 @@ nnoremap \r :action ReformatCode<CR>
 
 " code refactoring
 nnoremap <space>rr :action RenameElement<cr>
+nnoremap S :action SurroundWith<cr>
+vnoremap S :action SurroundWith<cr>
 
 " unimpaired mappings
 nnoremap [<space> O<esc>j
@@ -134,7 +136,17 @@ nnoremap [m :action MethodUp<cr>
 nnoremap ]m :action MethodDown<cr>
 nnoremap [c :action VcsShowPrevChangeMarker<cr>
 nnoremap ]c :action VcsShowNextChangeMarker<cr>
+" nnoremap <CR> :action GotoDeclaration<cr>
 
+
+" move the current line down
+nnoremap <C-j> :m +1<CR>
+" move the current line k
+nnoremap <C-k> :m -2<CR>
+" move the current line k
+vnoremap <C-j> :m +1<CR>
+" move the current line k
+vnoremap <C-k> :m -2<CR>
 
 " built-in navigation to navigated items works better
 nnoremap <c-o> :action Back<cr>
@@ -145,10 +157,10 @@ nnoremap g<c-o> <c-o>
 nnoremap g<c-i> <c-i>
 
 " built in search looks better
-nnoremap / :action Find<cr>
+" nnoremap / :action Find<cr>
 
 " but preserve ideavim search
 " set global flag in substitute command :s/patter/replacement/ command
-nnoremap g/ /
+" nnoremap g/ /
 
 

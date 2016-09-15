@@ -1,18 +1,18 @@
-#!/bin/bash - 
+#!/bin/bash -
 #===============================================================================
 #
 #          FILE: install.sh
-# 
-#         USAGE: ./install.sh 
-# 
-#   DESCRIPTION: 
-# 
+#
+#         USAGE: ./install.sh
+#
+#   DESCRIPTION:
+#
 #       OPTIONS: ---
 #  REQUIREMENTS: ---
 #          BUGS: ---
 #         NOTES: ---
-#        AUTHOR: YOUR NAME (), 
-#  ORGANIZATION: 
+#        AUTHOR: YOUR NAME (),
+#  ORGANIZATION:
 #       CREATED: Monday 18 July 2016 22:14
 #      REVISION:  ---
 #===============================================================================
