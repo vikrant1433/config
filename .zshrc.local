@@ -80,8 +80,8 @@ alias 'bundle-install'='vim +BundleInstall! +BundleClean +q'
 # if open multiples file with vim open them in vertical split. usage: vim -O file1 file2 file3
 #alias 'vim'='vim -O' # temporarily not using it may break other things that depend on vim e.g. git difftool, vimdiff
 # git fancy log
-alias 'glg1'="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
-alias 'glg2'="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+alias 'glg1'="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' "
+alias 'glg2'="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' "
 # git diff
 alias 'gd'='git difftool'
 # git add all the modified files
@@ -121,9 +121,9 @@ alias ',ev'='vim ~/.vimrc.local'
 # exit terminal
 #alias 'x'='exit'
 # tar
-alias 'tar'='tar -czvf'
+# alias 'tar'='tar -czvf'
 # untar
-alias 'untar'='tar -xjvf'
+# alias 'untar'='tar -xjvf'
 # delete vim swap files
 #alias 'ds'='rm ~/.vimswap/\* -fr'
 # edit ~/.ssh/config
@@ -223,6 +223,8 @@ alias 'vega'='ssh -X -t vega "zsh"'
 alias 'juno'='ssh -X -t juno "zsh"'
 # ssh safestreet
 alias 'safestreet'='ssh -X -t safestreet "zsh"'
+# ssh safestreet
+alias 'SS'='ssh -X -t safestreet "zsh"'
 # ssh vacha
 alias 'vacha'='ssh -X -t vacha "zsh"'
 # ssh vacha-root
