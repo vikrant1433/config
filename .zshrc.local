@@ -54,6 +54,9 @@ fi
 #=====================================================#
 # tx
 # general aliases
+alias 'ip3'='ipython3'
+alias 'p3'='ipython3'
+alias 'p2'='python2'
 alias 'config'='cd ~/config/'
 alias 'sudo'='sudo '
 alias 'l'='ls -lFha'
@@ -231,6 +234,7 @@ alias 'vacha'='ssh -X -t vacha "zsh"'
 alias 'vacha-root'='ssh -X -t vacha-root "zsh"'
 # ssh lappi
 alias 'lappi'='ssh -X -t lappi "zsh"'
+alias 'rmsa'='ssh -X rmsa -t "zsh" '
 # ssh testbed
 alias 'testbed'='ssh -X -t testbed "zsh"'
 # END SSH ALIAS
