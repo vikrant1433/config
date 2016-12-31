@@ -51,6 +51,14 @@ if [ -d ~/Dropbox ]; then
     alias 'awk-notes'=vim\ ~/Dropbox/notes/awk-notes.md
     # open ~/config/ directory 
 fi
+if [ -d ~/SafeStreet ]; then
+    # change directory to ~/SafeStreet/
+    alias 'S'='cd ~/SafeStreet'
+    buildss(){
+         cd ~/SafeStreet/
+         bash gradlew assembleDebug
+    }
+fi
 #=====================================================#
 # tx
 # general aliases
