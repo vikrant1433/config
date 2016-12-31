@@ -66,4 +66,8 @@ sed -i "/Bundle 'tpope\/vim-markdown'/d" ~/.vimrc.bundles
 # SPACEMACS
 ln -sf ${SCRIPT_ABS_PATH}/.spacemacs ~/.spacemacs
 
+# ssh config
+
+ln -sf ${SCRIPT_ABS_PATH}/.ssh/config ~/.ssh/config
+
 
