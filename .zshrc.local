@@ -65,6 +65,13 @@ if [ -d ~/SafeStreet ]; then
         echo "app link ${app_url} is copied to clipboard"
         echo "${app_url}" | xclip -selection clipboard
     }
+    deploy_br(){
+        buildss
+        \cp -f ~/SafeStreet/app/build/outputs/apk/app-debug.apk ~/Dropbox/tmp/
+        app_url=`dropbox sharelink ~/Dropbox/Public/app-debug.apk | sed 's/dl=0/dl=1/'`
+        echo "app link ${app_url} is copied to clipboard"
+        echo "${app_url}" | xclip -selection clipboard
+    }
 fi
 #=====================================================#
 # tx
