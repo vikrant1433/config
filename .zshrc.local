@@ -58,19 +58,31 @@ if [ -d ~/SafeStreet ]; then
          cd ~/SafeStreet/
          bash gradlew assembleDebug
     }
-    deploy(){
+    deploy_release(){
         buildss
         \cp -f ~/SafeStreet/app/build/outputs/apk/app-debug.apk ~/Dropbox/Public/
         app_url=`dropbox sharelink ~/Dropbox/Public/app-debug.apk | sed 's/dl=0/dl=1/'`
         echo "app link ${app_url} is copied to clipboard"
         echo "${app_url}" | xclip -selection clipboard
     }
-    deploy_br(){
+    deploy_debug(){
         buildss
         \cp -f ~/SafeStreet/app/build/outputs/apk/app-debug.apk ~/Dropbox/tmp/
-        app_url=`dropbox sharelink ~/Dropbox/Public/app-debug.apk | sed 's/dl=0/dl=1/'`
+        app_url=`dropbox sharelink ~/Dropbox/tmp/app-debug.apk | sed 's/dl=0/dl=1/'`
         echo "app link ${app_url} is copied to clipboard"
         echo "${app_url}" | xclip -selection clipboard
+    }
+fi
+if [ -d ~/Downloads/softwares/pycharm-2016.3/bin ]; then 
+
+    pycharm(){
+        bash ~/Downloads/softwares/pycharm-2016.3/bin/pycharm.sh > /dev/null 2>&1 &
+    }
+fi
+if [ -d ~/Downloads/softwares/android-studio/bin ]; then 
+
+    android_studio(){
+        bash ~/Downloads/softwares/android-studio/bin/studio.sh > /dev/null 2>&1 &
     }
 fi
 #=====================================================#
