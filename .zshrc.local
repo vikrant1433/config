@@ -286,3 +286,12 @@ export SSHPASS="1"
 export TERM=xterm-256color
 
 [ -f ~/config/.zshrc.local.me ] && source ~/config/.zshrc.local.me
+
+# added by Anaconda3 4.3.0 installer
+export PATH="/home/vikrant/anaconda3/bin:$PATH"
+
+
+# Rupee prompt character for vikrant@vikrant
+function prompt_char {
+    echo "$FG[163]₹$reset_color% ";
+}
