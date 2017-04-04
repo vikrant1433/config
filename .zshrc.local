@@ -292,6 +292,6 @@ export PATH="/home/vikrant/anaconda3/bin:$PATH"
 
 
 # Rupee prompt character for vikrant@vikrant
-function prompt_char {
-    echo "$FG[163]₹$reset_color% ";
-}
+# function prompt_char {
+#     echo "$FG[163]₹$reset_color% ";
+# }
