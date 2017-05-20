@@ -73,10 +73,11 @@ if [ -d ~/SafeStreet ]; then
         echo "${app_url}" | xclip -selection clipboard
     }
 fi
-if [ -d ~/Downloads/softwares/pycharm-2016.3/bin ]; then 
+if [ -d ~/Downloads/softwares/pycharm-2017.1.2/bin ]; then
 
     pycharm(){
-        bash ~/Downloads/softwares/pycharm-2016.3/bin/pycharm.sh > /dev/null 2>&1 &
+        bash ~/Downloads/softwares/pycharm-2017.1.2/bin/pycharm.sh > /dev/null 2>&1 &
+
     }
 fi
 if [ -d ~/Downloads/softwares/android-studio/bin ]; then 
@@ -220,7 +221,8 @@ alias 'dt'='python manage.py test '
 alias 'dmmig'='python manage.py makemigrations '
 alias 'dmig'='python manage.py migrate '
 alias 'dsmig'='python manage.py sqlmigrate '
-alias 'dshell'='python manage.py shell_plus '
+alias 'dms'='python manage.py shell'
+alias 'dmsp'='python manage.py shell_plus'
 alias 'drsp'='python manage.py runserver_plus '
 alias 'dcs'='python manage.py collectstatic '
 alias 'dsa'='python manage.py startapp '
