@@ -227,7 +227,21 @@ alias 'drsp'='python manage.py runserver_plus '
 alias 'dcs'='python manage.py collectstatic '
 alias 'dsa'='python manage.py startapp '
 drsg() {
-    python manage.py runserver 0.0.0.0:$1
+
+    if [ "$#" -eq 1 ]; then
+        python manage.py runserver 0.0.0.0:$1
+    else
+        python manage.py runserver 0.0.0.0:8000
+    fi
+}
+
+prs() {
+
+    if [ "$#" -eq 1 ]; then
+        python manage.py runscript $1 --traceback
+    else
+        echo "usage: python manage.py runscript <script_name> --traceback"
+    fi
 }
 # END DJANGO ALIAS
 # pip alias
