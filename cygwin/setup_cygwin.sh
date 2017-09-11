@@ -1,2 +1,2 @@
-ln -s ~/config/cygwin/.bashrc ~/.bashrc
-ln -s ~/config/cygwin/.inputrc ~/.inputrc
+ln -sf ~/config/cygwin/.bashrc ~/.bashrc
+ln -sf ~/config/cygwin/.inputrc ~/.inputrc
