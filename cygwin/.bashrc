@@ -469,3 +469,6 @@ alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
 alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify -m "--wip-- [skip ci]"'
 
 
+function git_current_branch(){
+   git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'
+}
