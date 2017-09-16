@@ -23,3 +23,4 @@ git pull --all
 bash install.sh
 bash make_links.sh
 rm ~/.zcompdump
+chsh -s $(which zsh)
