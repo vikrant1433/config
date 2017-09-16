@@ -17,10 +17,11 @@
 #      REVISION:  ---
 #===============================================================================
 
-bash internet.sh
+# bash internet.sh
 git submodule update --init
 git pull --all
 bash install.sh
 bash make_links.sh
 rm ~/.zcompdump
+bash configure.sh
 chsh -s $(which zsh)
