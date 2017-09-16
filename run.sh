@@ -24,4 +24,6 @@ bash install.sh
 bash make_links.sh
 rm ~/.zcompdump
 bash configure.sh
+bash fonts/source_code_pro.sh
 chsh -s $(which zsh)
+
