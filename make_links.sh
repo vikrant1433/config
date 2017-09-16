@@ -17,6 +17,7 @@
 #      REVISION:  ---
 #===============================================================================
 
+# by using the SCRIPT_ABS_PATH variable you can run the script from any directory
 cd "`dirname \"$0\"`"
 SCRIPT_ABS_PATH=${PWD}
 # ZSH
@@ -32,6 +33,7 @@ ln -fs ${SCRIPT_ABS_PATH}/.oh-my-zsh/custom/themes/dst.zsh-theme ~/.oh-my-zsh/cu
 ln -sf ${SCRIPT_ABS_PATH}/zsh-syntax-highlighting ~/.oh-my-zsh/plugins/
 
 # VIM
+ln -sf ${SCRIPT_ABS_PATH}/.vimrc.before.local ~/.vimrc.before.local 
 ln -sf ${SCRIPT_ABS_PATH}/.vimrc.local ~/.vimrc.local
 ln -sf ${SCRIPT_ABS_PATH}/.vimrc.bundles.local ~/.vimrc.bundles.local
 
@@ -50,5 +52,22 @@ ln -sf ${SCRIPT_ABS_PATH}/vim-instant-markdown/after/ftplugin/markdown/instant-m
 # .GITCONFIG
 ln -sf ${SCRIPT_ABS_PATH}/.gitconfig ~/.gitconfig
 
-#SSH
+# IDEAVIM
+ln -sf ${SCRIPT_ABS_PATH}/.ideavimrc ~/.ideavimrc
+
+# BASE16-GNOME-TERMINAL
+ln -sf -t ~/.config/ ${SCRIPT_ABS_PATH}/base16-gnome-terminal
+
+# delete  Bundle 'tpope/vim-markdown' from ~/.vimrc.bundles
+# as it is conflicting with plasticboy vim-markdown
+sed -i "/Bundle 'tpope\/vim-markdown'/d" ~/.vimrc.bundles
+
+
+# SPACEMACS
+ln -sf ${SCRIPT_ABS_PATH}/.spacemacs ~/.spacemacs
+
+# ssh config
+
 ln -sf ${SCRIPT_ABS_PATH}/.ssh/config ~/.ssh/config
+
+
