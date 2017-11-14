@@ -273,7 +273,10 @@ alias 6='cd -6'
 alias 7='cd -7'
 alias 8='cd -8'
 alias 9='cd -9'
-
+alias 'nvrel'='cd ~/c/src/sw/rel/gpu_drv/r387/r387_00/drivers/nvapi'
+alias 'nvdev'='cd ~/c/src/sw/dev/gpu_drv/bugfix_main/drivers/nvapi'
+alias 'makenvdev'='cd ~/c/src/sw/dev/gpu_drv/bugfix_main/drivers/nvapi && bash make.sh'
+alias 'devdriver'='cd //netapp-pu02/builds_sc/nightlyrestricted/NightlyRestricted-bugfix_main/NV/wddm2-x64'
 alias md='mkdir -p'
 alias rd=rmdir
 alias d='dirs -v | head -10'
@@ -467,8 +470,9 @@ alias glum='git pull upstream master'
 
 alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
 alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify -m "--wip-- [skip ci]"'
-
+alias ':q'='exit'
 
 function git_current_branch(){
    git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'
 }
+export HISTTIMEFORMAT="%d/%m/%y %T "
