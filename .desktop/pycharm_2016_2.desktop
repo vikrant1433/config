@@ -1,0 +1,12 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Icon[en_IN]=/home/vikrant/Downloads/softwares/pycharm-2016.2/bin/pycharm.png
+Name[en_IN]=PyCharm 2016.2
+Exec=/home/vikrant/Downloads/softwares/pycharm-2016.2/bin/pycharm.sh
+Comment[en_IN]=PyCharm 2016.2
+Name=PyCharm 2016.2
+Comment=PyCharm 2016.2
+Icon=gnome-panel-launcher

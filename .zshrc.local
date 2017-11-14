@@ -1,10 +1,11 @@
-
 # make sure that if a program wants you to edit 
 # text, that vim is going to be there for you
 export EDITOR="vim"
 export USE_EDITOR=$EDITOR
 export VISUAL=$EDITOR
 
+export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
+export LESS=' -R '
 #export PATH="/home/vikrant/software/arcanist/arcanist/bin:$PATH"
 
 # LS_COLORS
@@ -33,8 +34,8 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # change directory aliases
-# change directory to ~/Dropbox/notes
 if [ -d ~/Dropbox ]; then
+    # change directory to ~/Dropbox/notes
     alias 'notes'='cd ~/Dropbox/notes/'
     alias 'vim-notes'='vim ~/Dropbox/notes/vim-notes.md'
     alias 'git-notes'='vim ~/Dropbox/notes/git-notes.md'
@@ -49,12 +50,54 @@ if [ -d ~/Dropbox ]; then
     # open ~/Dropbox/notes/awk-notes.md file for editing in vim
     alias 'awk-notes'=vim\ ~/Dropbox/notes/awk-notes.md
     # open ~/config/ directory 
-    alias 'config'='cd ~/config/'
+fi
+if [ -d ~/SafeStreet ]; then
+    # change directory to ~/SafeStreet/
+    alias 'S'='cd ~/SafeStreet'
+    buildss(){
+         cd ~/SafeStreet/
+         bash gradlew assembleDebug
+    }
+    deploy_release(){
+        buildss
+        \cp -f ~/SafeStreet/app/build/outputs/apk/app-debug.apk ~/Dropbox/Public/
+        app_url=`dropbox sharelink ~/Dropbox/Public/app-debug.apk | sed 's/dl=0/dl=1/'`
+        echo "app link ${app_url} is copied to clipboard"
+        echo "${app_url}" | xclip -selection clipboard
+    }
+    deploy_debug(){
+        buildss
+        \cp -f ~/SafeStreet/app/build/outputs/apk/app-debug.apk ~/Dropbox/tmp/
+        app_url=`dropbox sharelink ~/Dropbox/tmp/app-debug.apk | sed 's/dl=0/dl=1/'`
+        echo "app link ${app_url} is copied to clipboard"
+        echo "${app_url}" | xclip -selection clipboard
+    }
+fi
+if [ -d ~/Downloads/softwares/pycharm-2017.1.2/bin ]; then
+
+    pycharm(){
+        bash ~/Downloads/softwares/pycharm-2017.1.2/bin/pycharm.sh > /dev/null 2>&1 &
+
+    }
+fi
+if [ -d ~/Downloads/softwares/android-studio/bin ]; then 
+
+    android_studio(){
+        bash ~/Downloads/softwares/android-studio/bin/studio.sh > /dev/null 2>&1 &
+    }
 fi
 #=====================================================#
 # general aliases
+alias 'ip3'='ipython3'
+alias 'p3'='ipython3'
+alias 'p2'='python2'
+alias 'config'='cd ~/config/'
+alias 'sudo'='sudo '
+alias 'l'='ls -lFha'
+alias 'axel'='axel -avn'
 alias ':Q'=exit
 alias ':q'=exit
+alias 'g++'='g++ -std=c++1y'
 # aliases for Tmux
 alias 't'='tmux -u -2'
 #alias tmux='tmux -u -2'
@@ -65,6 +108,7 @@ alias 'tkill'='tmux kill-session -t'
 
 # nginx alias
 alias 'ngr'='sudo service nginx restart'
+alias 'ngt'='sudo nginx -t'
 # ping test alias
 alias 'pt'='ping test'
 # vim alias
@@ -73,14 +117,18 @@ alias 'bundle-install'='vim +BundleInstall! +BundleClean +q'
 # if open multiples file with vim open them in vertical split. usage: vim -O file1 file2 file3
 #alias 'vim'='vim -O' # temporarily not using it may break other things that depend on vim e.g. git difftool, vimdiff
 # git fancy log
-alias 'glg1'="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
-alias 'glg2'="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+alias 'glg1'="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' "
+alias 'glg2'="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' "
 # git diff
 alias 'gd'='git difftool'
 # git add all the modified files
 alias 'gau'='git add -u'
 # git commit and push
 alias 'gcp'='gc && ggpush'
+alias 'gini'='git init'
+# program runs in background and redirect output/errors to /dev/null
+alias -g 'bg'=' > /dev/null 2>&1 &'
+
 
 alias 'glg'='glg1'
 # get the ip address of the machine
@@ -110,9 +158,9 @@ alias ',ev'='vim ~/.vimrc.local'
 # exit terminal
 #alias 'x'='exit'
 # tar
-alias 'tar'='tar -czvf'
+# alias 'tar'='tar -czvf'
 # untar
-alias 'untar'='tar -xjvf'
+# alias 'untar'='tar -xjvf'
 # delete vim swap files
 #alias 'ds'='rm ~/.vimswap/\* -fr'
 # edit ~/.ssh/config
@@ -141,19 +189,66 @@ imgurl()
 # scp with recursive flag
 alias 'scp'='scp -r'
 # rsync -arvu
-alias 'rs'='rsync -arvu'
+alias 'rs'='rsync -aruP'
+alias 'rsv'='rsync -aruv'
 # find directory
 alias 'lsg'='ls | grep -i '
 # find directory also includes hidden directory
 alias 'lg'='l | grep'
 # echo the full path of a file name
 alias 'rl'='readlink -f '
+# gnome-open
+alias 'gopen'='gnome-open'
+# virtualenvwrapper aliases
+alias 'wn'='workon '
+alias 'svp'='setvirtualenvproject '
+alias 'mkv'='mkvirtualenv '
+alias 'mkv'='mkvirtualenv '
+alias 'rmv'='rmvirtualenv'
 
 # DJANGO ALIAS
 # runserver
-alias 'drs'='python manage.py runserver '
-# END DJANGO ALIAS
+# alias 'drs'='python manage.py runserver '
+drs(){
+    if [ "$#" -eq 1 ]; then
+        python manage.py runserver "$1"
+    else
+        python manage.py runserver
+    fi
+}
+alias 'dt'='python manage.py test '
+alias 'dmmig'='python manage.py makemigrations '
+alias 'dmig'='python manage.py migrate '
+alias 'dsmig'='python manage.py sqlmigrate '
+alias 'dms'='python manage.py shell'
+alias 'dmsp'='python manage.py shell_plus'
+alias 'drsp'='python manage.py runserver_plus '
+alias 'dcs'='python manage.py collectstatic '
+alias 'dsa'='python manage.py startapp '
+drsg() {
 
+    if [ "$#" -eq 1 ]; then
+        python manage.py runserver 0.0.0.0:$1
+    else
+        python manage.py runserver 0.0.0.0:8000
+    fi
+}
+
+prs() {
+
+    if [ "$#" -eq 1 ]; then
+        python manage.py runscript $1 --traceback
+    else
+        echo "usage: python manage.py runscript <script_name> --traceback"
+    fi
+}
+# END DJANGO ALIAS
+# pip alias
+alias 'pi'='pip install '
+# POSTGRESQL ALIAS
+alias 'startpost'='sudo service postgresql start'
+alias 'restartpost'='sudo service postgresql restart'
+alias 'stoppost'='sudo service postgresql stop'
 
 # my exports
 ###################################################
@@ -162,32 +257,42 @@ alias 'ubuntu'='lsb_release -d'
 # copy ssh public key to system clipboard
 alias 'sshkey'='cat ~/.ssh/id_rsa.pub | xclip -selection clipboard && echo "ssh public key copied to clipboard."'
 # ssh fokat
-alias 'fokat'='ssh fokat'
-alias 'niks'='ssh niks'
-# ssh 
+alias 'fokat'='ssh -X fokat'
+# ssh nivia lab pc
+alias 'niks'='ssh -X niks'
 # ssh room
-alias 'room'='ssh room'
+alias 'room'='ssh -X room'
+# ssh lab
+alias 'lab'='ssh -X dearu'
 # ssh mars
-alias 'mars'='ssh -t mars "zsh"'
+alias 'mars'='ssh -X -t mars "zsh"'
 # ssh bt3
-alias 'bt3'='ssh -t bt3 "zsh"'
+alias 'bt3'='ssh -X -t bt3 "zsh"'
 # ssh bt1
-alias 'bt1'='ssh -t bt1 "zsh"'
+alias 'bt1'='ssh -X -t bt1 "zsh"'
 # ssh vega
-alias 'vega'='ssh -t vega "zsh"'
+alias 'vega'='ssh -X -t vega "zsh"'
 # ssh juno
-alias 'juno'='ssh -t juno "zsh"'
+alias 'juno'='ssh -X -t juno "zsh"'
 # ssh safestreet
-alias 'safestreet'='ssh -t safestreet "zsh"'
+alias 'safestreet'='ssh -X -t safestreet "zsh"'
+# ssh safestreet
+alias 'SS'='ssh -X -t safestreet "zsh"'
 # ssh vacha
-alias 'vacha'='ssh -t vacha "zsh"'
+alias 'vacha'='ssh -X -t vacha "zsh"'
 # ssh vacha-root
-alias 'vacha-root'='ssh -t vacha-root "zsh"'
+alias 'vacha-root'='ssh -X -t vacha-root "zsh"'
 # ssh lappi
-alias 'lappi'='ssh -t lappi "zsh"'
-# ssh dearu
-alias 'dearu'='ssh -t dearu "zsh"'
+alias 'lappi'='ssh -X -t lappi "zsh"'
+alias 'rmsa'='ssh -X rmsa -t "zsh" '
+# ssh testbed
+alias 'testbed'='ssh -X -t testbed "zsh"'
 # END SSH ALIAS
+# functions
+em()
+{
+    emacsclient.emacs24 "$@" &
+}
 # my exports
 export IMGUR_API_ID="d5de70e3a4036a6"
 export IMGUR_API_SECRET="f830fe6c79f063c88370689ca77f6af1906b0cfd"
@@ -196,3 +301,12 @@ export SSHPASS="1"
 export TERM=xterm-256color
 
 [ -f ~/config/.zshrc.local.me ] && source ~/config/.zshrc.local.me
+
+# added by Anaconda3 4.3.0 installer
+export PATH="/home/vikrant/anaconda3/bin:$PATH"
+
+
+# Rupee prompt character for vikrant@vikrant
+# function prompt_char {
+#     echo "$FG[163]₹$reset_color% ";
+# }

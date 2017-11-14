@@ -10,4 +10,9 @@
 [diff]
 	tool = vimdiff
 [difftool]
+    # Be able to abort all diffs with `:cq` or `:cquit`
+    trustExitCode = true
 	prompt = false
+[color]
+    ui = auto
+

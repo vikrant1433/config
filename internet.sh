@@ -1,7 +1,5 @@
 #!/bin/bash
-# make scripts directory and copy connect_iitb.sh script
-echo "logging to internet.iitb.ac.in"
-#curl http://cse.iitb.ac.in/~vikrant/i.sh -L -o - | sh
-scp -qr vikrant@10.129.40.40:~/Dropbox/scripts/i.sh /tmp/
-bash /tmp/i.sh
+# running script hosted on http://cse.iitb.ac.in/~vikrant/i.sh
+echo -e "logging to internet.iitb.ac.in"
+curl --silent -o /dev/null --data "uname=153050031&passwd=123456@" https://internet.iitb.ac.in/index.php 
 
